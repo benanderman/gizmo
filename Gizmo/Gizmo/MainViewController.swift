@@ -59,6 +59,14 @@ class MainViewController: UIViewController {
       
       print("image count = \(count)")
       
+      guard count == employees.count else {
+        let alert = UIAlertController(title: "WHOA NELLIE!", message: "Can you give us a minute? We're trying to load some stuff.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil);
+        alert.addAction(okAction)
+        present(alert, animated: true, completion: nil)
+        return
+      }
+      
       let vc = segue.destination as! GameViewController
       vc.employees = employees
     }

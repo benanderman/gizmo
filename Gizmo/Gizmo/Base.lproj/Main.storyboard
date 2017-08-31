@@ -15,6 +15,9 @@
         <array key="FunctionPro-Demi.otf">
             <string>FunctionPro-Demi</string>
         </array>
+        <array key="FunctionPro-Medium.otf">
+            <string>FunctionPro-Medium</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Master-->
@@ -150,46 +153,58 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFi-NV-qA7">
-                                <rect key="frame" x="135" y="51" width="105" height="50"/>
+                                <rect key="frame" x="135" y="120" width="105" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="105" id="GVw-MR-o0h"/>
                                     <constraint firstAttribute="height" constant="50" id="p9I-sk-UDC"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="50"/>
-                                <nil key="textColor"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eHp-58-JjQ">
-                                <rect key="frame" x="68" y="121" width="238" height="238"/>
+                                <rect key="frame" x="68" y="190" width="238" height="238"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="238" id="5BU-b1-Q2o"/>
                                     <constraint firstAttribute="height" constant="238" id="jqC-zw-jAp"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eW3-V6-ehY">
-                                <rect key="frame" x="24.5" y="409" width="326" height="120"/>
+                                <rect key="frame" x="24.5" y="478" width="326" height="120"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cyT-Cf-5UX">
                                         <rect key="frame" x="0.0" y="0.0" width="326" height="55"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8a-nF-AvH">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b8a-nF-AvH">
                                                 <rect key="frame" x="0.0" y="0.0" width="158" height="55"/>
+                                                <color key="backgroundColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="IFK-j8-WRh"/>
                                                     <constraint firstAttribute="width" constant="158" id="fce-Vj-PrM"/>
                                                 </constraints>
-                                                <state key="normal" title="Button"/>
+                                                <fontDescription key="fontDescription" name="FunctionPro-Medium" family="Function Pro" pointSize="20"/>
+                                                <state key="normal" title="Button">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="nameTapped:" destination="K4Z-6j-Af8" eventType="touchUpInside" id="OsM-zJ-sX6"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZu-hc-A6U">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iZu-hc-A6U">
                                                 <rect key="frame" x="168" y="0.0" width="158" height="55"/>
+                                                <color key="backgroundColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="width" constant="158" id="YoY-7T-z8C"/>
                                                     <constraint firstAttribute="height" constant="55" id="oko-hb-xha"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="FunctionPro-Medium" family="Function Pro" pointSize="20"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="nameTapped:" destination="K4Z-6j-Af8" eventType="touchUpInside" id="avq-HF-MXn"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="iZu-hc-A6U" secondAttribute="bottom" id="aaM-g1-GZH"/>
                                             <constraint firstAttribute="height" constant="55" id="dlC-sp-EWf"/>
                                             <constraint firstAttribute="width" constant="326" id="edn-24-iaS"/>
                                         </constraints>
@@ -197,21 +212,31 @@
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="c98-Mm-OsA">
                                         <rect key="frame" x="0.0" y="65" width="326" height="55"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUA-Tf-TUJ">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RUA-Tf-TUJ">
                                                 <rect key="frame" x="0.0" y="0.0" width="158" height="55"/>
+                                                <color key="backgroundColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="99P-E5-9n1"/>
                                                     <constraint firstAttribute="width" constant="158" id="rgw-mP-4VW"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="FunctionPro-Medium" family="Function Pro" pointSize="20"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="nameTapped:" destination="K4Z-6j-Af8" eventType="touchUpInside" id="Yqm-kV-RJv"/>
+                                                </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xad-X7-MTu">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xad-X7-MTu">
                                                 <rect key="frame" x="168" y="0.0" width="158" height="55"/>
+                                                <color key="backgroundColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="55" id="2I6-mG-S6e"/>
                                                     <constraint firstAttribute="width" constant="158" id="3TT-GT-vBi"/>
                                                 </constraints>
+                                                <fontDescription key="fontDescription" name="FunctionPro-Medium" family="Function Pro" pointSize="20"/>
                                                 <state key="normal" title="Button"/>
+                                                <connections>
+                                                    <action selector="nameTapped:" destination="K4Z-6j-Af8" eventType="touchUpInside" id="sqk-IG-LyO"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <constraints>
@@ -222,12 +247,12 @@
                                 </subviews>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="1" green="0.5568627451" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eW3-V6-ehY" firstAttribute="top" secondItem="eHp-58-JjQ" secondAttribute="bottom" constant="50" id="HKq-cG-fA0"/>
                             <constraint firstItem="eHp-58-JjQ" firstAttribute="top" secondItem="tFi-NV-qA7" secondAttribute="bottom" constant="20" id="TCe-AY-6wr"/>
                             <constraint firstItem="eW3-V6-ehY" firstAttribute="centerX" secondItem="upA-S6-8oy" secondAttribute="centerX" id="WTx-uP-NAC"/>
-                            <constraint firstItem="tFi-NV-qA7" firstAttribute="top" secondItem="x4J-mm-RLq" secondAttribute="bottom" constant="31" id="aBd-oM-KFe"/>
+                            <constraint firstItem="tFi-NV-qA7" firstAttribute="top" secondItem="x4J-mm-RLq" secondAttribute="bottom" constant="100" id="aBd-oM-KFe"/>
                             <constraint firstItem="tFi-NV-qA7" firstAttribute="centerX" secondItem="upA-S6-8oy" secondAttribute="centerX" id="hqc-aS-Zlf"/>
                             <constraint firstItem="eHp-58-JjQ" firstAttribute="centerX" secondItem="upA-S6-8oy" secondAttribute="centerX" id="oaZ-RF-jBQ"/>
                         </constraints>

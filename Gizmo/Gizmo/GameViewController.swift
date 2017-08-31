@@ -56,7 +56,7 @@ class GameViewController: UIViewController {
     }
     
     // Find the first employee with an image
-    guard let employee = getNextEmployee() else {
+    guard let (employee, index) = getNextEmployee() else {
       return
     }
     
@@ -66,13 +66,15 @@ class GameViewController: UIViewController {
     let validFirstNames = buildValidFirstNames(employee: employee)
     
     for (index, button) in buttons.enumerated() {
-      button.titleLabel?.text = validFirstNames[index]
+      button.setTitle(validFirstNames[index], for: .normal)
     }
+    
+    self.employees.remove(at: index)
   }
   
-  private func getNextEmployee() -> Employee? {
+  private func getNextEmployee() -> (Employee, Int)? {
     guard let employees = employees else {
-      return nil;
+      return nil
     }
     
     guard employees.count > 0 else {
@@ -86,7 +88,7 @@ class GameViewController: UIViewController {
       employee = employees[lcv]
     }
     
-    return employee
+    return (employee, lcv)
   }
   
   private func buildValidFirstNames(employee: Employee) -> [String] {
@@ -103,5 +105,30 @@ class GameViewController: UIViewController {
     }
     
     return Array(nameSet).shuffled()
+  }
+  
+  @IBAction func nameTapped(_ sender: Any) {
+    guard let button = sender as? UIButton else {
+      return
+    }
+    
+    let okAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
+      guard let strongSelf = self else {
+        return
+      }
+      
+      strongSelf.showEmployee()
+    })
+    
+    if button.titleLabel?.text == currentEmployee?.firstName {
+      let alert = UIAlertController(title: "WINNER!", message: "You're good.", preferredStyle: .alert)
+      alert.addAction(okAction)
+      present(alert, animated: true, completion: nil)
+    }
+    else {
+      let alert = UIAlertController(title: "WRONG!", message: "You're bad.", preferredStyle: .alert)
+      alert.addAction(okAction)
+      present(alert, animated: true, completion: nil)
+    }
   }
 }

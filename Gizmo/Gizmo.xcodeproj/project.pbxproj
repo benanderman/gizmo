@@ -21,6 +21,7 @@
 		8BE0C8BE1F58602B000CA177 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0C8BD1F58602B000CA177 /* GameViewController.swift */; };
 		8BE0C8C01F5860A3000CA177 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0C8BF1F5860A3000CA177 /* ScoreViewController.swift */; };
 		D28DAAF11F58827400FD25B6 /* EmojiAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DAAF01F58827400FD25B6 /* EmojiAnimator.swift */; };
+		D28DAAF31F58C81F00FD25B6 /* FunctionPro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = D28DAAF21F58C81F00FD25B6 /* FunctionPro-Book.otf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +41,7 @@
 		8BE0C8BD1F58602B000CA177 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8BE0C8BF1F5860A3000CA177 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
 		D28DAAF01F58827400FD25B6 /* EmojiAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiAnimator.swift; sourceTree = "<group>"; };
+		D28DAAF21F58C81F00FD25B6 /* FunctionPro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Book.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		8BB691941F58771E00D9EBE5 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
+				D28DAAF21F58C81F00FD25B6 /* FunctionPro-Book.otf */,
 				8BB691971F58775100D9EBE5 /* FunctionPro-Bold.otf */,
 				8B70570C1F587F77000449FA /* FunctionPro-Demi.otf */,
 				8BB691951F58772C00D9EBE5 /* FunctionPro-Medium.otf */,
@@ -162,6 +165,7 @@
 				8BE0C8B41F585BF1000CA177 /* LaunchScreen.storyboard in Resources */,
 				8BB691981F58775100D9EBE5 /* FunctionPro-Bold.otf in Resources */,
 				8B70570D1F587F77000449FA /* FunctionPro-Demi.otf in Resources */,
+				D28DAAF31F58C81F00FD25B6 /* FunctionPro-Book.otf in Resources */,
 				8BE0C8B11F585BF1000CA177 /* Assets.xcassets in Resources */,
 				8BB691961F58772C00D9EBE5 /* FunctionPro-Medium.otf in Resources */,
 				8BE0C8AF1F585BF1000CA177 /* Main.storyboard in Resources */,

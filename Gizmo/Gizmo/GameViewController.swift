@@ -18,6 +18,7 @@ class GameViewController: UIViewController {
   @IBOutlet weak var labelStackView: UIStackView!
   @IBOutlet weak var winLossLabel: UILabel!
   @IBOutlet weak var descriptionLabel: UILabel!
+  @IBOutlet weak var scoreLabel: UILabel!
   
   @IBOutlet weak var tapView: UIView!
   
@@ -25,6 +26,13 @@ class GameViewController: UIViewController {
   
   private var firstNames = Set<String>()
   private var currentEmployee: Employee?
+  
+  private var guessed = 0
+  private var guessedRight = 0
+  private var score = 0
+  private var secondsLeft = 0
+  
+  private var timer = Timer()
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -60,9 +68,37 @@ class GameViewController: UIViewController {
    }
    */
   
-  override func viewDidAppear(_ animated: Bool) {
-    super.viewDidAppear(animated);
+  override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated);
     showEmployee()
+    
+    
+    guessed = 0
+    guessedRight = 0
+    score = 0
+    scoreLabel.text = "\(score)"
+    secondsLeft = 60
+    timerLabel.text = "1:00"
+    timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] (timer) in
+      self?.updateTimer()
+    })
+  }
+  
+  func updateTimer() {
+    secondsLeft -= 1
+    let minutes = secondsLeft / 60
+    let seconds = secondsLeft % 60
+    let zero = seconds < 10 ? "0" : ""
+    timerLabel.text = "\(minutes):\(zero)\(seconds)"
+    
+    if secondsLeft == 0 {
+      timeRanOut()
+    }
+  }
+  
+  func timeRanOut() {
+    timer.invalidate()
+    performSegue(withIdentifier: "toScoreView", sender: self)
   }
   
   func showEmployee() {
@@ -136,9 +172,13 @@ class GameViewController: UIViewController {
     let nameAndTitle = "\(employee.firstName), \(employee.title)"
     let description: String
     
+    guessed += 1
     if button.titleLabel?.text == employee.firstName {
       winLossLabel.text = "YES FRIEND!"
       description = "I'm \(nameAndTitle). You are great."
+      guessedRight += 1
+      score += 10
+      scoreLabel.text = "\(score)"
     }
     else {
       winLossLabel.text = "NOPE!!"
@@ -150,7 +190,7 @@ class GameViewController: UIViewController {
     }
     
     let mutableDescription = NSMutableAttributedString(string: description, attributes: [
-      NSFontAttributeName: UIFont(name: "FunctionPro-Medium", size: 22)!
+      NSFontAttributeName: UIFont(name: "FunctionPro-Book", size: 22)!
       ])
     mutableDescription.addAttribute(NSFontAttributeName, value: UIFont(name: "FunctionPro-Demi", size: 22)!, range: description.nsRange(from: range))
     
@@ -166,6 +206,17 @@ class GameViewController: UIViewController {
   func screenTapped() {
     showButtons(true)
     showEmployee()
+  }
+  
+  // In a storyboard-based application, you will often want to do a little preparation before navigation
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    if let vc = segue.destination as? ScoreViewController {
+      vc.score = score
+      vc.guessed = guessed
+      vc.guessedRight = guessedRight
+    }
   }
 }
 

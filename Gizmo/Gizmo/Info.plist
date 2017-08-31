@@ -51,5 +51,10 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+	<key>UIAppFonts</key>
+	<array>
+		<string>FunctionPro-Bold.otf</string>
+		<string>FunctionPro-Medium.otf</string>
+	</array>
 </dict>
 </plist>

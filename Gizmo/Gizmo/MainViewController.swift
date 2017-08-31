@@ -10,10 +10,13 @@ import UIKit
 
 class MainViewController: UIViewController {
   
+  @IBOutlet weak var logoView: AnimatingSpringLogoView!
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
+    logoView.startAnimation()
   }
   
   override func didReceiveMemoryWarning() {

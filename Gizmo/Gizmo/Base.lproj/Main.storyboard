@@ -8,12 +8,20 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="FunctionPro-Bold.otf">
+            <string>FunctionPro-Bold</string>
+        </array>
+        <array key="FunctionPro-Demi.otf">
+            <string>FunctionPro-Demi</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Master-->
         <scene sceneID="pY4-Hu-kfo">
             <objects>
-                <navigationController title="Master" id="RMx-3f-FxP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
+                <navigationController title="Master" navigationBarHidden="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -37,39 +45,92 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gizmo" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jAo-bG-kdg">
-                                <rect key="frame" x="166" y="263" width="67" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc5-XS-WsB">
-                                <rect key="frame" x="164" y="399" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Start"/>
-                                <connections>
-                                    <segue destination="K4Z-6j-Af8" kind="show" id="X6V-gI-4sx"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yoN-m5-oel" customClass="AnimatingSpringLogoView" customModule="Gizmo" customModuleProvider="target">
-                                <rect key="frame" x="160" y="117" width="55" height="55"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5SM-46-x6j">
+                                <rect key="frame" x="67" y="148" width="240" height="110"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="2Z1-bR-uT5">
+                                        <rect key="frame" x="89" y="0.0" width="62" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="4Ku-Hc-Q4m"/>
+                                            <constraint firstAttribute="width" constant="62" id="y7r-aw-7GD"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gizmo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7lu-Oh-LDb">
+                                        <rect key="frame" x="30" y="61" width="180" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="180" id="XlB-Ec-YGA"/>
+                                            <constraint firstAttribute="height" constant="55" id="atI-PG-MEX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="FunctionPro-Bold" family="Function Pro" pointSize="55"/>
+                                        <color key="textColor" red="1" green="0.5568627451" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="PGV-tZ-vZb"/>
-                                    <constraint firstAttribute="width" constant="55" id="lyf-un-i3Z"/>
+                                    <constraint firstItem="2Z1-bR-uT5" firstAttribute="top" secondItem="5SM-46-x6j" secondAttribute="top" id="Bfx-Df-KG0"/>
+                                    <constraint firstItem="2Z1-bR-uT5" firstAttribute="centerX" secondItem="5SM-46-x6j" secondAttribute="centerX" id="IMx-xF-ObL"/>
+                                    <constraint firstAttribute="height" constant="110" id="Yo9-7n-Cje"/>
+                                    <constraint firstItem="7lu-Oh-LDb" firstAttribute="centerX" secondItem="5SM-46-x6j" secondAttribute="centerX" id="dL1-hR-JfW"/>
+                                    <constraint firstAttribute="width" constant="240" id="m5C-8c-HhO"/>
+                                    <constraint firstItem="7lu-Oh-LDb" firstAttribute="top" secondItem="2Z1-bR-uT5" secondAttribute="bottom" constant="22" id="y4H-uI-bSF"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="0g2-AA-gwG">
+                                <rect key="frame" x="52" y="340" width="270" height="185"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc5-XS-WsB">
+                                        <rect key="frame" x="0.0" y="0.0" width="270" height="55"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="HDy-CP-cS9"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="FunctionPro-Demi" family="Function Pro" pointSize="25"/>
+                                        <state key="normal" title="START">
+                                            <color key="titleColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="K4Z-6j-Af8" kind="show" id="X6V-gI-4sx"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Tp-ie-k1X">
+                                        <rect key="frame" x="0.0" y="65" width="270" height="55"/>
+                                        <color key="backgroundColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="4aL-PG-X1E"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="FunctionPro-Demi" family="Function Pro" pointSize="20"/>
+                                        <state key="normal" title="Settings"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FOM-X9-MgY">
+                                        <rect key="frame" x="0.0" y="130" width="270" height="55"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="55" id="ena-Ig-AV5"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="FunctionPro-Demi" family="Function Pro" pointSize="20"/>
+                                        <state key="normal" title="Leaderboard"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="185" id="HXe-Wd-6jR"/>
+                                    <constraint firstAttribute="width" constant="270" id="qTB-vi-IAG"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="yoN-m5-oel" firstAttribute="centerX" secondItem="veL-PJ-axk" secondAttribute="centerX" id="PDm-y7-IJr"/>
-                            <constraint firstItem="yoN-m5-oel" firstAttribute="top" secondItem="Xry-dq-W8r" secondAttribute="bottom" constant="53" id="aAn-w3-cel"/>
+                            <constraint firstItem="5SM-46-x6j" firstAttribute="centerX" secondItem="veL-PJ-axk" secondAttribute="centerX" id="2qF-9m-Lcn"/>
+                            <constraint firstItem="0g2-AA-gwG" firstAttribute="centerX" secondItem="veL-PJ-axk" secondAttribute="centerX" id="khU-bC-Rf1"/>
+                            <constraint firstItem="0g2-AA-gwG" firstAttribute="top" secondItem="5SM-46-x6j" secondAttribute="bottom" constant="82" id="rDM-Fo-NbH"/>
+                            <constraint firstItem="5SM-46-x6j" firstAttribute="top" secondItem="Xry-dq-W8r" secondAttribute="bottom" constant="128" id="vbr-Qc-eEh"/>
                         </constraints>
                     </view>
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                     <navigationItem key="navigationItem" id="ENq-ME-AtX"/>
                     <connections>
-                        <outlet property="logoView" destination="yoN-m5-oel" id="rXq-dv-dMX"/>
+                        <outlet property="leaderboardButton" destination="FOM-X9-MgY" id="U9F-V4-iIk"/>
+                        <outlet property="settingsButton" destination="2Tp-ie-k1X" id="FcN-Dt-3jj"/>
+                        <outlet property="startButton" destination="Fc5-XS-WsB" id="h40-aj-Umm"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6Yo-n3-OJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -215,4 +276,7 @@
             <point key="canvasLocation" x="2152.8000000000002" y="-634.632683658171"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="logo" width="61" height="38"/>
+    </resources>
 </document>

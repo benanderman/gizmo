@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8B70570D1F587F77000449FA /* FunctionPro-Demi.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8B70570C1F587F77000449FA /* FunctionPro-Demi.otf */; };
 		8BB691911F5863B900D9EBE5 /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB691901F5863B900D9EBE5 /* Employee.swift */; };
 		8BB691931F58654B00D9EBE5 /* AnimatingSpringLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB691921F58654B00D9EBE5 /* AnimatingSpringLogoView.swift */; };
 		8BB691961F58772C00D9EBE5 /* FunctionPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BB691951F58772C00D9EBE5 /* FunctionPro-Medium.otf */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8B70570C1F587F77000449FA /* FunctionPro-Demi.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Demi.otf"; sourceTree = "<group>"; };
 		8BB691901F5863B900D9EBE5 /* Employee.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		8BB691921F58654B00D9EBE5 /* AnimatingSpringLogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatingSpringLogoView.swift; sourceTree = "<group>"; };
 		8BB691951F58772C00D9EBE5 /* FunctionPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Medium.otf"; sourceTree = "<group>"; };
@@ -51,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				8BB691971F58775100D9EBE5 /* FunctionPro-Bold.otf */,
+				8B70570C1F587F77000449FA /* FunctionPro-Demi.otf */,
 				8BB691951F58772C00D9EBE5 /* FunctionPro-Medium.otf */,
 			);
 			name = Fonts;
@@ -152,6 +155,7 @@
 			files = (
 				8BE0C8B41F585BF1000CA177 /* LaunchScreen.storyboard in Resources */,
 				8BB691981F58775100D9EBE5 /* FunctionPro-Bold.otf in Resources */,
+				8B70570D1F587F77000449FA /* FunctionPro-Demi.otf in Resources */,
 				8BE0C8B11F585BF1000CA177 /* Assets.xcassets in Resources */,
 				8BB691961F58772C00D9EBE5 /* FunctionPro-Medium.otf in Resources */,
 				8BE0C8AF1F585BF1000CA177 /* Main.storyboard in Resources */,

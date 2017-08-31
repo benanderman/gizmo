@@ -10,24 +10,31 @@ import UIKit
 
 class MainViewController: UIViewController {
   
-  @IBOutlet weak var logoView: AnimatingSpringLogoView!
+  @IBOutlet weak var startButton: UIButton!
+  @IBOutlet weak var settingsButton: UIButton!
+  @IBOutlet weak var leaderboardButton: UIButton!
   
   var employees: [Employee]?
   
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    styleButton(button: settingsButton)
+    styleButton(button: leaderboardButton)
+    
     // Do any additional setup after loading the view.
-    logoView.startAnimation()
-    Employee.loadFromWeb { (employees: [Employee]?) in
-      self.employees = employees
-      self.logoView.stopAnimation()
+    Employee.loadFromWeb { [weak self] (employees: [Employee]?) in
+      guard let strongSelf = self else {
+        return
+      }
+      
+      strongSelf.employees = employees
     }
   }
   
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
+  func styleButton(button: UIButton) {
+    button.layer.borderWidth = 2
+    button.layer.borderColor = UIColor.white.cgColor
   }
   
   

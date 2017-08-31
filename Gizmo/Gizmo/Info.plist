@@ -54,6 +54,7 @@
 	<key>UIAppFonts</key>
 	<array>
 		<string>FunctionPro-Bold.otf</string>
+		<string>FunctionPro-Demi.otf</string>
 		<string>FunctionPro-Medium.otf</string>
 	</array>
 </dict>

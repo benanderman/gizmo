@@ -38,15 +38,32 @@ class MainViewController: UIViewController {
   }
   
   
-  /*
-   // MARK: - Navigation
-   
-   // In a storyboard-based application, you will often want to do a little preparation before navigation
-   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-   // Get the new view controller using segue.destinationViewController.
-   // Pass the selected object to the new view controller.
-   }
-   */
+  
+  // MARK: - Navigation
+  
+  // In a storyboard-based application, you will often want to do a little preparation before navigation
+  override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+    // Get the new view controller using segue.destinationViewController.
+    // Pass the selected object to the new view controller.
+    if segue.destination is GameViewController {
+      guard let employees = employees else {
+        return
+      }
+      
+      var count = 0
+      for employee in employees {
+        if employee.🖼 != nil {
+          count += 1
+        }
+      }
+      
+      print("image count = \(count)")
+      
+      let vc = segue.destination as! GameViewController
+      vc.employees = employees
+    }
+  }
+  
   
   @IBAction func unwindToMain(segue: UIStoryboardSegue) {
     

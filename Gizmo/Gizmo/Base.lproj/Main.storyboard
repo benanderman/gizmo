@@ -21,7 +21,7 @@
         <scene sceneID="pY4-Hu-kfo">
             <objects>
                 <navigationController title="Master" navigationBarHidden="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -150,7 +150,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tFi-NV-qA7">
-                                <rect key="frame" x="135" y="95" width="105" height="50"/>
+                                <rect key="frame" x="135" y="51" width="105" height="50"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="105" id="GVw-MR-o0h"/>
                                     <constraint firstAttribute="height" constant="50" id="p9I-sk-UDC"/>
@@ -160,14 +160,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eHp-58-JjQ">
-                                <rect key="frame" x="68" y="165" width="238" height="238"/>
+                                <rect key="frame" x="68" y="121" width="238" height="238"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="238" id="5BU-b1-Q2o"/>
                                     <constraint firstAttribute="height" constant="238" id="jqC-zw-jAp"/>
                                 </constraints>
                             </imageView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="eW3-V6-ehY">
-                                <rect key="frame" x="24.5" y="453" width="326" height="120"/>
+                                <rect key="frame" x="24.5" y="409" width="326" height="120"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="cyT-Cf-5UX">
                                         <rect key="frame" x="0.0" y="0.0" width="326" height="55"/>

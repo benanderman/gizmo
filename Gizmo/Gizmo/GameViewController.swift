@@ -29,6 +29,9 @@ class GameViewController: UIViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
     
+    imageView.clipsToBounds = true
+    imageView.layer.cornerRadius = imageView.frame.width / 2
+    
     let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(screenTapped))
     tapView.addGestureRecognizer(gestureRecognizer)
     

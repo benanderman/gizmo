@@ -14,6 +14,13 @@ class GameViewController: UIViewController {
   
   @IBOutlet var buttons: [UIButton]!
   
+  @IBOutlet weak var buttonStackView: UIStackView!
+  @IBOutlet weak var labelStackView: UIStackView!
+  @IBOutlet weak var winLossLabel: UILabel!
+  @IBOutlet weak var descriptionLabel: UILabel!
+  
+  @IBOutlet weak var tapView: UIView!
+  
   var employees: [Employee]!
   
   private var firstNames = Set<String>()
@@ -21,6 +28,11 @@ class GameViewController: UIViewController {
   
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(screenTapped))
+    tapView.addGestureRecognizer(gestureRecognizer)
+    
+    showButtons(true)
     
     // Do any additional setup after loading the view.
     guard let employees = employees else {
@@ -112,23 +124,52 @@ class GameViewController: UIViewController {
       return
     }
     
-    let okAction = UIAlertAction(title: "OK", style: .default, handler: { [weak self] action in
-      guard let strongSelf = self else {
-        return
-      }
-      
-      strongSelf.showEmployee()
-    })
+    showButtons(false)
     
-    if button.titleLabel?.text == currentEmployee?.firstName {
-      let alert = UIAlertController(title: "WINNER!", message: "You're good.", preferredStyle: .alert)
-      alert.addAction(okAction)
-      present(alert, animated: true, completion: nil)
+    guard let employee = currentEmployee else {
+      return
+    }
+    
+    let nameAndTitle = "\(employee.firstName), \(employee.title)"
+    let description: String
+    
+    if button.titleLabel?.text == employee.firstName {
+      winLossLabel.text = "YES FRIEND!"
+      description = "I'm \(nameAndTitle). You are great."
     }
     else {
-      let alert = UIAlertController(title: "WRONG!", message: "You're bad.", preferredStyle: .alert)
-      alert.addAction(okAction)
-      present(alert, animated: true, completion: nil)
+      winLossLabel.text = "NOPE!!"
+      description = "I'm \(nameAndTitle). Pls remember my name. :("
     }
+    
+    guard let range = description.range(of: nameAndTitle) else {
+      return
+    }
+    
+    let mutableDescription = NSMutableAttributedString(string: description, attributes: [
+      NSFontAttributeName: UIFont(name: "FunctionPro-Medium", size: 22)!
+      ])
+    mutableDescription.addAttribute(NSFontAttributeName, value: UIFont(name: "FunctionPro-Demi", size: 22)!, range: description.nsRange(from: range))
+    
+    descriptionLabel.attributedText = mutableDescription
+  }
+  
+  func showButtons(_ visible: Bool) {
+    buttonStackView.isHidden = !visible
+    labelStackView.isHidden = visible
+    tapView.isHidden = visible
+  }
+  
+  func screenTapped() {
+    showButtons(true)
+    showEmployee()
+  }
+}
+
+extension String {
+  func nsRange(from range: Range<Index>) -> NSRange {
+    let lower = UTF16View.Index(range.lowerBound, within: utf16)
+    let upper = UTF16View.Index(range.upperBound, within: utf16)
+    return NSRange(location: utf16.startIndex.distance(to: lower), length: lower.distance(to: upper))
   }
 }

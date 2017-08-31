@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -248,20 +249,61 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="JLB-vQ-WsN">
+                                <rect key="frame" x="26" y="478" width="323" height="66.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aia-1h-Xnm">
+                                        <rect key="frame" x="0.0" y="0.0" width="323" height="30"/>
+                                        <fontDescription key="fontDescription" name="FunctionPro-Bold" family="Function Pro" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="K5W-Z4-TZv">
+                                        <rect key="frame" x="0.0" y="40" width="323" height="26.5"/>
+                                        <attributedString key="attributedText">
+                                            <fragment content="Label">
+                                                <attributes>
+                                                    <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <font key="NSFont" size="22" name=".AppleSystemUIFont"/>
+                                                    <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural" tighteningFactorForTruncation="0.0"/>
+                                                </attributes>
+                                            </fragment>
+                                        </attributedString>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9Wn-R1-R2L">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.5568627451" blue="0.45098039220000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="3G1-mp-I7c" firstAttribute="top" secondItem="9Wn-R1-R2L" secondAttribute="bottom" id="1gI-n7-w5n"/>
+                            <constraint firstAttribute="trailing" secondItem="9Wn-R1-R2L" secondAttribute="trailing" id="Amz-6T-acU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JLB-vQ-WsN" secondAttribute="trailing" constant="10" id="C55-Uf-lHp"/>
+                            <constraint firstItem="9Wn-R1-R2L" firstAttribute="top" secondItem="upA-S6-8oy" secondAttribute="top" id="F5i-4I-0Iz"/>
                             <constraint firstItem="eW3-V6-ehY" firstAttribute="top" secondItem="eHp-58-JjQ" secondAttribute="bottom" constant="50" id="HKq-cG-fA0"/>
+                            <constraint firstItem="9Wn-R1-R2L" firstAttribute="leading" secondItem="upA-S6-8oy" secondAttribute="leading" id="S7x-fF-YqE"/>
+                            <constraint firstItem="JLB-vQ-WsN" firstAttribute="top" secondItem="eHp-58-JjQ" secondAttribute="bottom" constant="50" id="SXV-yb-sUk"/>
                             <constraint firstItem="eHp-58-JjQ" firstAttribute="top" secondItem="tFi-NV-qA7" secondAttribute="bottom" constant="20" id="TCe-AY-6wr"/>
                             <constraint firstItem="eW3-V6-ehY" firstAttribute="centerX" secondItem="upA-S6-8oy" secondAttribute="centerX" id="WTx-uP-NAC"/>
+                            <constraint firstItem="JLB-vQ-WsN" firstAttribute="centerX" secondItem="upA-S6-8oy" secondAttribute="centerX" id="XFS-rs-lBb"/>
                             <constraint firstItem="tFi-NV-qA7" firstAttribute="top" secondItem="x4J-mm-RLq" secondAttribute="bottom" constant="100" id="aBd-oM-KFe"/>
                             <constraint firstItem="tFi-NV-qA7" firstAttribute="centerX" secondItem="upA-S6-8oy" secondAttribute="centerX" id="hqc-aS-Zlf"/>
+                            <constraint firstItem="JLB-vQ-WsN" firstAttribute="leading" secondItem="upA-S6-8oy" secondAttribute="leadingMargin" constant="10" id="lpZ-cG-qgA"/>
                             <constraint firstItem="eHp-58-JjQ" firstAttribute="centerX" secondItem="upA-S6-8oy" secondAttribute="centerX" id="oaZ-RF-jBQ"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="buttonStackView" destination="eW3-V6-ehY" id="Bxs-JO-e8s"/>
+                        <outlet property="descriptionLabel" destination="K5W-Z4-TZv" id="asc-8m-wOX"/>
                         <outlet property="imageView" destination="eHp-58-JjQ" id="chz-uC-TJi"/>
+                        <outlet property="labelStackView" destination="JLB-vQ-WsN" id="QB8-ac-loI"/>
+                        <outlet property="tapView" destination="9Wn-R1-R2L" id="uKA-DW-INj"/>
                         <outlet property="timerLabel" destination="tFi-NV-qA7" id="OrY-Wn-1uv"/>
+                        <outlet property="winLossLabel" destination="Aia-1h-Xnm" id="fBh-r5-Fmd"/>
                         <outletCollection property="buttons" destination="b8a-nF-AvH" collectionClass="NSMutableArray" id="F4r-Lq-qxz"/>
                         <outletCollection property="buttons" destination="iZu-hc-A6U" collectionClass="NSMutableArray" id="hyq-pn-ekh"/>
                         <outletCollection property="buttons" destination="RUA-Tf-TUJ" collectionClass="NSMutableArray" id="aif-LS-ilv"/>
@@ -271,7 +313,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9rM-SI-9Hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1402" y="-633"/>
+            <point key="canvasLocation" x="1400.8" y="-633.73313343328346"/>
         </scene>
         <!--Score View Controller-->
         <scene sceneID="iJo-4C-NUc">

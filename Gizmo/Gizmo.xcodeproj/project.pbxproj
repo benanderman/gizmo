@@ -20,6 +20,7 @@
 		8BE0C8BC1F585C42000CA177 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0C8BB1F585C42000CA177 /* MainViewController.swift */; };
 		8BE0C8BE1F58602B000CA177 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0C8BD1F58602B000CA177 /* GameViewController.swift */; };
 		8BE0C8C01F5860A3000CA177 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0C8BF1F5860A3000CA177 /* ScoreViewController.swift */; };
+		D28DAAF11F58827400FD25B6 /* EmojiAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DAAF01F58827400FD25B6 /* EmojiAnimator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +39,7 @@
 		8BE0C8BB1F585C42000CA177 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8BE0C8BD1F58602B000CA177 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8BE0C8BF1F5860A3000CA177 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		D28DAAF01F58827400FD25B6 /* EmojiAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiAnimator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +94,7 @@
 				8B70570E1F5888A7000449FA /* Shuffle.swift */,
 				8BE0C8BB1F585C42000CA177 /* MainViewController.swift */,
 				8BE0C8BF1F5860A3000CA177 /* ScoreViewController.swift */,
+				D28DAAF01F58827400FD25B6 /* EmojiAnimator.swift */,
 			);
 			path = Gizmo;
 			sourceTree = "<group>";
@@ -174,6 +177,7 @@
 			files = (
 				8BE0C8A81F585BF1000CA177 /* AppDelegate.swift in Sources */,
 				8BB691931F58654B00D9EBE5 /* AnimatingSpringLogoView.swift in Sources */,
+				D28DAAF11F58827400FD25B6 /* EmojiAnimator.swift in Sources */,
 				8BE0C8BE1F58602B000CA177 /* GameViewController.swift in Sources */,
 				8BE0C8BC1F585C42000CA177 /* MainViewController.swift in Sources */,
 				8BB691911F5863B900D9EBE5 /* Employee.swift in Sources */,

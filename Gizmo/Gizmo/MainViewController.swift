@@ -10,6 +10,8 @@ import UIKit
 
 class MainViewController: UIViewController {
   
+  @IBOutlet weak var logoImage: UIImageView!
+  @IBOutlet weak var logoText: UILabel!
   @IBOutlet weak var startButton: UIButton!
   @IBOutlet weak var settingsButton: UIButton!
   @IBOutlet weak var leaderboardButton: UIButton!
@@ -35,6 +37,63 @@ class MainViewController: UIViewController {
   func styleButton(button: UIButton) {
     button.layer.borderWidth = 2
     button.layer.borderColor = UIColor.white.cgColor
+  }
+  
+  override func viewWillAppear(_ animated: Bool) {
+    
+    let slowDuration = 0.5
+    let duration: CFTimeInterval = 0.15
+    
+    let buttons: [UIView?] = [self.startButton, self.settingsButton, self.leaderboardButton]
+    let logoViews: [UIView?] = [self.logoImage, self.logoText]
+    
+    UIView.animate(withDuration: 1.5) {
+      
+      let fade = CABasicAnimation(keyPath: "opacity")
+      fade.fromValue = 0.0
+      fade.toValue = 1.0
+      fade.duration = duration
+      fade.fillMode = kCAFillModeBackwards
+      fade.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+      
+      let translateY = CABasicAnimation(keyPath: "transform.translation.y")
+      translateY.fromValue = self.view.frame.size.height / 2 - self.logoImage.superview!.frame.origin.y - self.logoImage.frame.size.height / 2
+      translateY.toValue = 0.0
+      translateY.duration = slowDuration
+      translateY.fillMode = kCAFillModeBackwards
+      translateY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+      
+      let translateX = CABasicAnimation(keyPath: "transform.translation.x")
+      translateX.fromValue = self.view.frame.size.width - self.startButton.frame.minX
+      translateX.toValue = 0.0
+      translateX.duration = duration
+      translateX.fillMode = kCAFillModeBackwards
+      translateX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
+    
+      var beginTime = CACurrentMediaTime()
+      for view in logoViews {
+        translateY.beginTime = beginTime
+        fade.beginTime = beginTime
+        if let layer = view?.layer {
+          if view != self.logoImage {
+            layer.add(fade, forKey: nil)
+          }
+          layer.add(translateY, forKey: nil)
+          beginTime += 0.8 * slowDuration
+        }
+      }
+      
+      for view in buttons {
+        fade.beginTime = beginTime
+        translateX.beginTime = beginTime
+        if let layer = view?.layer {
+          layer.add(fade, forKey: "fade")
+          layer.add(translateX, forKey: "translateX")
+          beginTime += 0.8 * duration
+        }
+      }
+    }
+    
   }
   
   

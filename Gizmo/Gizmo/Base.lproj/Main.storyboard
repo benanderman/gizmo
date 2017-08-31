@@ -44,6 +44,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fc5-XS-WsB">
+                                <rect key="frame" x="164" y="399" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <segue destination="K4Z-6j-Af8" kind="show" id="X6V-gI-4sx"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -53,5 +61,72 @@
             </objects>
             <point key="canvasLocation" x="672.79999999999995" y="-629.2353823088456"/>
         </scene>
+        <!--Game View Controller-->
+        <scene sceneID="EMk-0c-0js">
+            <objects>
+                <viewController id="K4Z-6j-Af8" customClass="GameViewController" customModule="Gizmo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x4J-mm-RLq"/>
+                        <viewControllerLayoutGuide type="bottom" id="3G1-mp-I7c"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="upA-S6-8oy">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eHp-58-JjQ">
+                                <rect key="frame" x="67" y="157" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nq8-hP-4zV">
+                                <rect key="frame" x="164" y="571" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Score"/>
+                                <connections>
+                                    <segue destination="xAe-DO-aPg" kind="show" id="jqj-k3-GRv"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <segue destination="xAe-DO-aPg" kind="show" id="pTL-78-wbP"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9rM-SI-9Hy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1402" y="-633"/>
+        </scene>
+        <!--Score View Controller-->
+        <scene sceneID="iJo-4C-NUc">
+            <objects>
+                <viewController id="xAe-DO-aPg" customClass="ScoreViewController" customModule="Gizmo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="9qo-rb-L7U"/>
+                        <viewControllerLayoutGuide type="bottom" id="brF-0z-Bx3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NSY-81-taD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eE4-hR-NSw">
+                                <rect key="frame" x="131" y="543" width="112" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Go Back to Main"/>
+                                <connections>
+                                    <segue destination="b2d-Ky-urf" kind="unwind" unwindAction="unwindToMainWithSegue:" id="Gkv-hw-1ph"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KzM-vM-5P8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="b2d-Ky-urf" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="2152.8000000000002" y="-634.632683658171"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="pTL-78-wbP"/>
+    </inferredMetricsTieBreakers>
 </document>

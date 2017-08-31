@@ -12,11 +12,17 @@ class MainViewController: UIViewController {
   
   @IBOutlet weak var logoView: AnimatingSpringLogoView!
   
+  var employees: [Employee]?
+  
   override func viewDidLoad() {
     super.viewDidLoad()
     
     // Do any additional setup after loading the view.
     logoView.startAnimation()
+    Employee.loadFromWeb { (employees: [Employee]?) in
+      self.employees = employees
+      self.logoView.stopAnimation()
+    }
   }
   
   override func didReceiveMemoryWarning() {

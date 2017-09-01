@@ -45,6 +45,10 @@ class GameViewController: UIViewController {
     let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(screenTapped))
     tapView.addGestureRecognizer(gestureRecognizer)
     
+    for button in buttons {
+      button.layer.cornerRadius = 3.0
+    }
+    
     // Do any additional setup after loading the view.
     guard let employees = employees else {
       return

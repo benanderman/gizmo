@@ -24,6 +24,8 @@ class MainViewController: UIViewController {
     styleButton(button: settingsButton)
     styleButton(button: leaderboardButton)
     
+    startButton.layer.cornerRadius = 3.0
+    
     // Do any additional setup after loading the view.
     Employee.loadFromWeb { [weak self] (employees: [Employee]?) in
       guard let strongSelf = self else {
@@ -37,6 +39,7 @@ class MainViewController: UIViewController {
   func styleButton(button: UIButton) {
     button.layer.borderWidth = 2
     button.layer.borderColor = UIColor.white.cgColor
+    button.layer.cornerRadius = 3.0
   }
   
   override func viewWillAppear(_ animated: Bool) {

@@ -29,7 +29,7 @@
                 <navigationController title="Master" navigationBarHidden="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -93,8 +93,8 @@
                                         <constraints>
                                             <constraint firstAttribute="height" constant="55" id="HDy-CP-cS9"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" name="FunctionPro-Demi" family="Function Pro" pointSize="25"/>
-                                        <state key="normal" title="START">
+                                        <fontDescription key="fontDescription" name="FunctionPro-Demi" family="Function Pro" pointSize="23"/>
+                                        <state key="normal" title=" Start" image="triangle">
                                             <color key="titleColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
@@ -117,6 +117,9 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" name="FunctionPro-Demi" family="Function Pro" pointSize="20"/>
                                         <state key="normal" title="Leaderboard"/>
+                                        <connections>
+                                            <segue destination="OHy-ok-ZIW" kind="show" id="eH5-wW-y2Y"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -353,6 +356,64 @@
             </objects>
             <point key="canvasLocation" x="1410" y="-630"/>
         </scene>
+        <!--High Scores View Controller-->
+        <scene sceneID="qwW-LX-F8a">
+            <objects>
+                <viewController id="OHy-ok-ZIW" customClass="HighScoresViewController" customModule="Gizmo" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="c0P-dX-tIn"/>
+                        <viewControllerLayoutGuide type="bottom" id="bu2-AF-hy7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="yOj-m0-o1R">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5XI-Mw-kHC" userLabel="Home Button">
+                                <rect key="frame" x="16" y="35" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="BGL-ru-DcP"/>
+                                    <constraint firstAttribute="width" constant="30" id="Get-pL-k6s"/>
+                                </constraints>
+                                <state key="normal" image="home"/>
+                                <connections>
+                                    <action selector="homeButtonTapped:" destination="K4Z-6j-Af8" eventType="touchUpInside" id="EXu-f5-Gz4"/>
+                                    <segue destination="f4C-O5-y65" kind="unwind" unwindAction="unwindToMainWithSegue:" id="2EF-0d-60q"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="High Scores" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0fa-JA-6R5">
+                                <rect key="frame" x="27" y="115" width="122.5" height="22"/>
+                                <fontDescription key="fontDescription" name="FunctionPro-Bold" family="Function Pro" pointSize="22"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="vCx-lB-GfO">
+                                <rect key="frame" x="198" y="112" width="150" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="NZX-qB-O4S"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="" image="group"/>
+                                    <segment title="" image="noun1122815Cc"/>
+                                </segments>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </segmentedControl>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="vCx-lB-GfO" secondAttribute="trailing" constant="27" id="1i4-B7-vK3"/>
+                            <constraint firstItem="5XI-Mw-kHC" firstAttribute="top" secondItem="c0P-dX-tIn" secondAttribute="bottom" constant="15" id="7X4-bJ-Uli"/>
+                            <constraint firstItem="5XI-Mw-kHC" firstAttribute="leading" secondItem="yOj-m0-o1R" secondAttribute="leadingMargin" id="Hwn-Vj-amC"/>
+                            <constraint firstItem="vCx-lB-GfO" firstAttribute="centerY" secondItem="0fa-JA-6R5" secondAttribute="centerY" id="Up4-7w-MUy"/>
+                            <constraint firstItem="0fa-JA-6R5" firstAttribute="leading" secondItem="yOj-m0-o1R" secondAttribute="leading" constant="27" id="c6t-P9-Z2Y"/>
+                            <constraint firstItem="0fa-JA-6R5" firstAttribute="top" secondItem="5XI-Mw-kHC" secondAttribute="bottom" constant="50" id="vpS-Ov-1lk"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OQX-KP-vtg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="f4C-O5-y65" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="672.79999999999995" y="56.221889055472268"/>
+        </scene>
         <!--Score View Controller-->
         <scene sceneID="iJo-4C-NUc">
             <objects>
@@ -393,7 +454,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Best Score: 400" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoC-Md-lQO">
-                                <rect key="frame" x="95.5" y="361" width="186" height="30"/>
+                                <rect key="frame" x="95" y="361" width="186" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bi4-x9-cPI"/>
                                 </constraints>
@@ -428,7 +489,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YU4-JS-PaE">
-                                <rect key="frame" x="112" y="201.5" width="153" height="35.5"/>
+                                <rect key="frame" x="111.5" y="201.5" width="153" height="35.5"/>
                                 <fontDescription key="fontDescription" name="FunctionPro-Medium" family="Function Pro" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -476,7 +537,7 @@
                             <constraint firstItem="YU4-JS-PaE" firstAttribute="centerX" secondItem="NSY-81-taD" secondAttribute="centerX" id="0Of-75-T0z"/>
                             <constraint firstItem="eE4-hR-NSw" firstAttribute="top" secondItem="pcq-49-pWc" secondAttribute="bottom" constant="23" id="6hf-Ap-Myf"/>
                             <constraint firstAttribute="trailingMargin" secondItem="eE4-hR-NSw" secondAttribute="trailing" constant="52" id="BGD-tT-gnQ"/>
-                            <constraint firstItem="EpQ-mk-CzL" firstAttribute="leading" secondItem="NSY-81-taD" secondAttribute="leadingMargin" constant="-16" id="DUj-iC-HBo"/>
+                            <constraint firstItem="EpQ-mk-CzL" firstAttribute="leading" secondItem="NSY-81-taD" secondAttribute="leading" id="DUj-iC-HBo"/>
                             <constraint firstItem="eE4-hR-NSw" firstAttribute="leading" secondItem="NSY-81-taD" secondAttribute="leadingMargin" constant="52" id="FH3-2I-WH8"/>
                             <constraint firstItem="YU4-JS-PaE" firstAttribute="top" secondItem="EpQ-mk-CzL" secondAttribute="bottom" constant="41.5" id="FIX-gt-dUV"/>
                             <constraint firstItem="eoC-Md-lQO" firstAttribute="top" secondItem="iI8-zq-RqZ" secondAttribute="bottom" constant="16" id="L4j-Va-woe"/>
@@ -490,7 +551,7 @@
                             <constraint firstItem="eE4-hR-NSw" firstAttribute="centerX" secondItem="NSY-81-taD" secondAttribute="centerX" id="mb2-Kn-Z2e"/>
                             <constraint firstItem="pcq-49-pWc" firstAttribute="leading" secondItem="NSY-81-taD" secondAttribute="leadingMargin" constant="52" id="re7-Tb-oru"/>
                             <constraint firstItem="iI8-zq-RqZ" firstAttribute="centerX" secondItem="NSY-81-taD" secondAttribute="centerX" id="uVD-ue-adC"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="EpQ-mk-CzL" secondAttribute="trailing" constant="-16" id="vlA-ta-vkT"/>
+                            <constraint firstAttribute="trailing" secondItem="EpQ-mk-CzL" secondAttribute="trailing" id="vlA-ta-vkT"/>
                             <constraint firstItem="iI8-zq-RqZ" firstAttribute="top" secondItem="YU4-JS-PaE" secondAttribute="bottom" constant="22" id="yca-cj-SNu"/>
                         </constraints>
                     </view>
@@ -513,8 +574,11 @@
     </scenes>
     <resources>
         <image name="bone" width="35" height="35"/>
+        <image name="group" width="17" height="17"/>
         <image name="home" width="32" height="32"/>
         <image name="logo" width="61" height="38"/>
+        <image name="noun1122815Cc" width="17" height="17"/>
         <image name="shape" width="26" height="27"/>
+        <image name="triangle" width="13" height="18"/>
     </resources>
 </document>

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct HighScore {
   let userId: String
@@ -43,7 +44,7 @@ class HighScoreManager {
   static var globalHighScores = [HighScore]()
   
   static var userId: String {
-    return NSUUID().uuidString
+    return UIDevice.current.identifierForVendor?.uuidString ?? "unknown"
   }
   
   static func isScoreHigh(score: Int) -> Bool {

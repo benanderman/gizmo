@@ -226,7 +226,7 @@ class GameViewController: UIViewController, EmojiAnimator {
     
     guessed += 1
     if button.titleLabel?.text == employee.firstName {
-      winLossLabel.text = "YES FRIEND!"
+      winLossLabel.text = "Yes!"
       description = "I'm \(nameAndTitle). You are great."
       guessedRight += 1
       streak += 1
@@ -237,8 +237,8 @@ class GameViewController: UIViewController, EmojiAnimator {
       addConfettiEmoji(streak)
     }
     else {
-      winLossLabel.text = "NOPE!!"
-      description = "I'm \(nameAndTitle). Pls remember my name. :("
+      winLossLabel.text = "Excuse me?"
+      description = "I'm \(nameAndTitle). Please remember my name."
       
       let numEmoji = streak == 0 ? 1 : streak
       addSadEmoji(numEmoji)

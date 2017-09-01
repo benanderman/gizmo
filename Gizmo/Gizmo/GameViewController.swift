@@ -23,6 +23,7 @@ class GameViewController: UIViewController {
   @IBOutlet weak var tapView: UIView!
   
   var employees: [Employee]!
+  private var gameEmployees: [Employee]!
   
   private var firstNames = Set<String>()
   private var currentEmployee: Employee?
@@ -53,9 +54,6 @@ class GameViewController: UIViewController {
     for employee in employees {
       firstNames.insert(employee.firstName)
     }
-    
-    // Shuffle the list
-    self.employees = employees.shuffled()
   }
   
   /*
@@ -70,8 +68,11 @@ class GameViewController: UIViewController {
   
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated);
-    showEmployee()
     
+    // Shuffle the list
+    self.gameEmployees = employees.shuffled()
+    
+    showEmployee()
     
     guessed = 0
     guessedRight = 0
@@ -102,7 +103,7 @@ class GameViewController: UIViewController {
   }
   
   func showEmployee() {
-    guard employees != nil else {
+    guard gameEmployees != nil else {
       return
     }
     
@@ -120,11 +121,11 @@ class GameViewController: UIViewController {
       button.setTitle(validFirstNames[index], for: .normal)
     }
     
-    self.employees.remove(at: index)
+    self.gameEmployees.remove(at: index)
   }
   
   private func getNextEmployee() -> (Employee, Int)? {
-    guard let employees = employees else {
+    guard let employees = gameEmployees else {
       return nil
     }
     

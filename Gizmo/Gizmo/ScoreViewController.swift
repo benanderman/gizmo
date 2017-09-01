@@ -49,6 +49,9 @@ class ScoreViewController: UIViewController {
     // Dispose of any resources that can be recreated.
   }
   
+  @IBAction func playAgainTapped(_ sender: Any) {
+    navigationController?.popViewController(animated: true)
+  }
 
   /*
   // MARK: - Navigation

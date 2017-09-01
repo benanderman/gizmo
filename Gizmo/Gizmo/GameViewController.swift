@@ -243,7 +243,7 @@ class GameViewController: UIViewController, EmojiAnimator {
       let numEmoji = streak == 0 ? 1 : streak
       addSadEmoji(numEmoji)
       
-      streak = 1
+      streak = 0
     }
     
     guard let range = description.range(of: nameAndTitle) else {

@@ -29,7 +29,7 @@
                 <navigationController title="Master" navigationBarHidden="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -393,7 +393,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Best Score: 400" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoC-Md-lQO">
-                                <rect key="frame" x="95" y="361" width="186" height="30"/>
+                                <rect key="frame" x="95.5" y="361" width="186" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bi4-x9-cPI"/>
                                 </constraints>
@@ -428,7 +428,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YU4-JS-PaE">
-                                <rect key="frame" x="111.5" y="201.5" width="153" height="35.5"/>
+                                <rect key="frame" x="112" y="201.5" width="153" height="35.5"/>
                                 <fontDescription key="fontDescription" name="FunctionPro-Medium" family="Function Pro" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>

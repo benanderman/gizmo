@@ -29,6 +29,7 @@ class ScoreViewController: UIViewController {
     styleButtons()
     
     diagonalView.layer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat.pi * -2.5 / 180.0))
+    diagonalView.layer.allowsEdgeAntialiasing = true;
     diagonalView.isHidden = true
     
     scoreContainer.layer.cornerRadius = 10.0

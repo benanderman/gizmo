@@ -166,6 +166,7 @@ class GameViewController: UIViewController, EmojiAnimator {
     
     // Find the first employee with an image
     guard let (employee, index) = getNextEmployee() else {
+      timeRanOut()
       return
     }
     

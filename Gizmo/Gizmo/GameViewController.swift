@@ -129,16 +129,17 @@ class GameViewController: UIViewController, EmojiAnimator {
   
   func timeRanOut() {
     timer.invalidate()
-    if HighScoreManager.isScoreHigh(score: score) {
+    if HighScoreManager.name == nil {
       let alertController = UIAlertController(title: "High score!", message: nil, preferredStyle: .alert)
       
       let confirmAction = UIAlertAction(title: "Submit", style: .default) { [weak self] (_) in
-        let name = alertController.textFields?[0].text ?? "Mystery Person"
-        HighScoreManager.addHighScore(score: self?.score ?? 0, name: name)
+        HighScoreManager.name = alertController.textFields?[0].text ?? "Mystery Person"
+        HighScoreManager.addHighScore(score: self?.score ?? 0)
         self?.performSegue(withIdentifier: "toScoreView", sender: self)
       }
       
       let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] (_) in
+        HighScoreManager.addHighScore(score: self?.score ?? 0)
         self?.performSegue(withIdentifier: "toScoreView", sender: self)
       }
       

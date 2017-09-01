@@ -42,21 +42,15 @@ struct HighScore {
 class HighScoreManager {
   static var localHighScores = [HighScore]()
   static var globalHighScores = [HighScore]()
+  static var name: String?
   
   static var userId: String {
     return UIDevice.current.identifierForVendor?.uuidString ?? "unknown"
   }
   
-  static func isScoreHigh(score: Int) -> Bool {
-    if localHighScores.count < maxLocalScores {
-      return true
-    }
-    return localHighScores.last!.score < score
-  }
-  
-  static func addHighScore(score: Int, name: String) {
+  static func addHighScore(score: Int) {
     let newHighScore = HighScore(userId: self.userId,
-                                 name: name,
+                                 name: self.name ?? "Mystery Person",
                                  score: score,
                                  timestamp: Int(Date().timeIntervalSince1970))
     
@@ -74,9 +68,7 @@ class HighScoreManager {
     }
     saveLocalHighScores()
     
-    if (insertIndex == 0) {
-      postGlobalHighScore(score: newHighScore, completion: {})
-    }
+    postGlobalHighScore(score: newHighScore, completion: {})
   }
   
   static func saveLocalHighScores() {

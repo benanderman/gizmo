@@ -92,7 +92,26 @@ class HighScoreManager {
   }
   
   static func postGlobalHighScore(score: HighScore, completion: () -> Void) {
+    let url = URL(string: "http://gizmo-app-backend.herokuapp.com/scores/\(score.userId)")
+    let session = URLSession.shared
+    let request = NSMutableURLRequest(url: url! as URL)
+    request.httpMethod = "POST"
+
+    do {
+        request.httpBody = try JSONSerialization.data(withJSONObject: score.dictionary, options: .prettyPrinted)
+    } catch let error {
+        print(error.localizedDescription)
+    }
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
+    request.addValue("application/json", forHTTPHeaderField: "Accept")
     
+    let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
+        guard error == nil else {
+            return
+        }
+    })
+
+    task.resume()
   }
   
   static func fetchGlobalHighScores(completion: () -> Void) {

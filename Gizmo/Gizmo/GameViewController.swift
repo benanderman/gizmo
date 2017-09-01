@@ -32,6 +32,7 @@ class GameViewController: UIViewController {
   private var guessedRight = 0
   private var score = 0
   private var secondsLeft = 0
+  private var streak = 1
   
   private var timer = Timer()
   
@@ -178,12 +179,14 @@ class GameViewController: UIViewController {
       winLossLabel.text = "YES FRIEND!"
       description = "I'm \(nameAndTitle). You are great."
       guessedRight += 1
-      score += 10
+      score += 10 * streak
+      streak += 1
       scoreLabel.text = "\(score)"
     }
     else {
       winLossLabel.text = "NOPE!!"
       description = "I'm \(nameAndTitle). Pls remember my name. :("
+      streak = 1
     }
     
     guard let range = description.range(of: nameAndTitle) else {

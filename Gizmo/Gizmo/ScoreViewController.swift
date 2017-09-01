@@ -43,11 +43,6 @@ class ScoreViewController: UIViewController {
     scoreLabel.text = "\(score)"
     bestScoreLabel.text = "Your Best Score: \(score)"
   }
-
-  override func didReceiveMemoryWarning() {
-    super.didReceiveMemoryWarning()
-    // Dispose of any resources that can be recreated.
-  }
   
   @IBAction func playAgainTapped(_ sender: Any) {
     navigationController?.popViewController(animated: true)

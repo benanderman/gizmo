@@ -121,7 +121,7 @@ class MainViewController: UIViewController {
       
       print("image count = \(count)")
       
-      guard count == employees.count else {
+      guard count >= 40 else {
         let alert = UIAlertController(title: "WHOA NELLIE!", message: "Can you give us a minute? We're trying to load some stuff.", preferredStyle: .alert)
         let okAction = UIAlertAction(title: "OK", style: .default, handler: nil);
         alert.addAction(okAction)

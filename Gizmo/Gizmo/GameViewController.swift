@@ -45,8 +45,6 @@ class GameViewController: UIViewController {
     let gestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(screenTapped))
     tapView.addGestureRecognizer(gestureRecognizer)
     
-    showButtons(true)
-    
     // Do any additional setup after loading the view.
     guard let employees = employees else {
       return
@@ -72,6 +70,8 @@ class GameViewController: UIViewController {
     
     // Shuffle the list
     self.gameEmployees = employees.shuffled()
+    
+    showButtons(true)
     
     showEmployee()
     

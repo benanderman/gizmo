@@ -14,12 +14,14 @@ class ScoreViewController: UIViewController {
   var guessed = 0
   var guessedRight = 0
   
-  @IBOutlet var diagonalView: UIView!
-  @IBOutlet var playAgainButton: UIButton!
-  @IBOutlet var backToHomeButton: UIButton!
-  @IBOutlet var scoreLabel: UILabel!
-  @IBOutlet var scoreContainer: UIView!
-  @IBOutlet var bestScoreLabel: UILabel!
+  @IBOutlet weak var diagonalView: UIView!
+  @IBOutlet weak var playAgainButton: UIButton!
+  @IBOutlet weak var backToHomeButton: UIButton!
+  @IBOutlet weak var scoreLabel: UILabel!
+  @IBOutlet weak var scoreContainer: UIView!
+  @IBOutlet weak var bestScoreLabel: UILabel!
+  @IBOutlet weak var petView: UIImageView!
+  @IBOutlet weak var petLabel: UILabel!
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -27,7 +29,11 @@ class ScoreViewController: UIViewController {
     styleButtons()
     
     diagonalView.layer.setAffineTransform(CGAffineTransform(rotationAngle: CGFloat.pi * -2.5 / 180.0))
+    diagonalView.isHidden = true
+    
     scoreContainer.layer.cornerRadius = 10.0
+    
+    determinePet()
   }
   
   func styleButtons() {
@@ -40,12 +46,36 @@ class ScoreViewController: UIViewController {
   }
   
   override func viewWillAppear(_ animated: Bool) {
+    super.viewWillAppear(animated)
     scoreLabel.text = "\(score)"
     bestScoreLabel.text = "Your Best Score: \(score)"
+    diagonalView.isHidden = false
+  }
+  
+  override func viewWillDisappear(_ animated: Bool) {
+    super.viewWillDisappear(animated)
+    diagonalView.isHidden = true
   }
   
   @IBAction func playAgainTapped(_ sender: Any) {
     navigationController?.popViewController(animated: true)
+  }
+  
+  private func determinePet() {
+    let percent = guessed == 0 ? 0.0 : Double(guessedRight) / Double(guessed)
+
+    if percent < 0.3 {
+      petView.image = #imageLiteral(resourceName: "cat")
+      petLabel.text = "Dang, do you even work here???"
+    }
+    else if percent > 0.7 {
+      petView.image = #imageLiteral(resourceName: "doge")
+      petLabel.text = "Wow much points. Such amaze."
+    }
+    else {
+      petView.image = #imageLiteral(resourceName: "pug")
+      petLabel.text = "Um... what's YOUR name?"
+    }
   }
 
   /*

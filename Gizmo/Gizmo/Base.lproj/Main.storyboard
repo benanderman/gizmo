@@ -29,7 +29,7 @@
                 <navigationController title="Master" navigationBarHidden="YES" id="RMx-3f-FxP" sceneMemberID="viewController">
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
-                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="Pmd-2v-anx">
+                    <navigationBar key="navigationBar" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" id="Pmd-2v-anx">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -380,7 +380,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Best Score: 400" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoC-Md-lQO">
-                                <rect key="frame" x="95" y="361" width="186" height="30"/>
+                                <rect key="frame" x="94.5" y="361" width="186" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bi4-x9-cPI"/>
                                 </constraints>
@@ -415,15 +415,38 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YU4-JS-PaE">
-                                <rect key="frame" x="111.5" y="201.5" width="153" height="35.5"/>
+                                <rect key="frame" x="111" y="201.5" width="153" height="35.5"/>
                                 <fontDescription key="fontDescription" name="FunctionPro-Medium" family="Function Pro" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EpQ-mk-CzL" userLabel="Orange View">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="160"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ejm-Nm-DlS">
+                                        <rect key="frame" x="0.0" y="20" width="162" height="140"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="162" id="FFr-3e-vp7"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnB-ak-IsF">
+                                        <rect key="frame" x="172" y="50" width="183" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="iaG-1B-Uul"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="FunctionPro-Demi" family="Function Pro" pointSize="22"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
                                 <color key="backgroundColor" red="1" green="0.55686274509803924" blue="0.45098039215686275" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstItem="dnB-ak-IsF" firstAttribute="centerY" secondItem="EpQ-mk-CzL" secondAttribute="centerY" id="4QX-tf-bDj"/>
+                                    <constraint firstAttribute="trailing" secondItem="dnB-ak-IsF" secondAttribute="trailing" constant="20" id="GjM-Or-ezd"/>
+                                    <constraint firstItem="Ejm-Nm-DlS" firstAttribute="top" secondItem="EpQ-mk-CzL" secondAttribute="top" constant="20" id="Nnh-XI-0yO"/>
+                                    <constraint firstItem="Ejm-Nm-DlS" firstAttribute="leading" secondItem="EpQ-mk-CzL" secondAttribute="leading" id="WkD-Cs-4QV"/>
+                                    <constraint firstItem="dnB-ak-IsF" firstAttribute="leading" secondItem="Ejm-Nm-DlS" secondAttribute="trailing" constant="10" id="Wt4-kY-S6M"/>
+                                    <constraint firstAttribute="bottom" secondItem="Ejm-Nm-DlS" secondAttribute="bottom" id="kcC-fD-YZI"/>
                                     <constraint firstAttribute="height" constant="160" id="psw-eh-8xN"/>
                                 </constraints>
                             </view>
@@ -462,6 +485,8 @@
                         <outlet property="backToHomeButton" destination="eE4-hR-NSw" id="mAv-fc-bry"/>
                         <outlet property="bestScoreLabel" destination="eoC-Md-lQO" id="7AL-rZ-auC"/>
                         <outlet property="diagonalView" destination="RFA-DK-Qgj" id="yEZ-aQ-euP"/>
+                        <outlet property="petLabel" destination="dnB-ak-IsF" id="qKj-Mx-jhJ"/>
+                        <outlet property="petView" destination="Ejm-Nm-DlS" id="0u7-RL-SlR"/>
                         <outlet property="playAgainButton" destination="pcq-49-pWc" id="W2b-1L-NCO"/>
                         <outlet property="scoreContainer" destination="iI8-zq-RqZ" id="3V3-Ze-Eiz"/>
                         <outlet property="scoreLabel" destination="SEB-Zl-Qu1" id="xhT-pX-PrH"/>

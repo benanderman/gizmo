@@ -49,7 +49,8 @@ class ScoreViewController: UIViewController {
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     scoreLabel.text = "\(score)"
-    bestScoreLabel.text = "Your Best Score: \(score)"
+    let bestScore = !HighScoreManager.localHighScores.isEmpty ? HighScoreManager.localHighScores[0].score : score
+    bestScoreLabel.text = "Your Best Score: \(bestScore)"
     diagonalView.isHidden = false
   }
   

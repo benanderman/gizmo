@@ -104,7 +104,28 @@ class GameViewController: UIViewController {
   
   func timeRanOut() {
     timer.invalidate()
-    performSegue(withIdentifier: "toScoreView", sender: self)
+    if HighScoreManager.isScoreHigh(score: score) {
+      let alertController = UIAlertController(title: "High score!", message: nil, preferredStyle: .alert)
+      
+      let confirmAction = UIAlertAction(title: "Submit", style: .default) { [weak self] (_) in
+        let name = alertController.textFields?[0].text ?? "Mystery Person"
+        HighScoreManager.addHighScore(score: self?.score ?? 0, name: name)
+        self?.performSegue(withIdentifier: "toScoreView", sender: self)
+      }
+      
+      let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { [weak self] (_) in
+        self?.performSegue(withIdentifier: "toScoreView", sender: self)
+      }
+      
+      alertController.addTextField { (textField) in
+        textField.placeholder = "Name"
+      }
+      
+      alertController.addAction(confirmAction)
+      alertController.addAction(cancelAction)
+      
+      self.present(alertController, animated: true, completion: nil)
+    }
   }
   
   func showEmployee() {

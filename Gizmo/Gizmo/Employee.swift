@@ -80,7 +80,7 @@ class Employee {
 }
 
 private func loadEmployees() -> [Employee]? {
-  guard let 🚩 = URL(string: "http://gizmo-app-backend.herokuapp.com/team") else { return nil }
+  guard let 🚩 = URL(string: "https://gizmo-app-backend.herokuapp.com/team") else { return nil }
   guard let 💾 = try? Data(contentsOf: 🚩) else { return nil }
   let json = try? JSONSerialization.jsonObject(with: 💾)
   guard let jsonEmployees = json as? [Any] else { return nil }

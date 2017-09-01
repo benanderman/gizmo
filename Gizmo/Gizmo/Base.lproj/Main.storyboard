@@ -15,6 +15,9 @@
         <array key="FunctionPro-Bold.otf">
             <string>FunctionPro-Bold</string>
         </array>
+        <array key="FunctionPro-Book.otf">
+            <string>FunctionPro-Book</string>
+        </array>
         <array key="FunctionPro-Demi.otf">
             <string>FunctionPro-Demi</string>
         </array>
@@ -489,14 +492,57 @@
                                 </segments>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="plS-RM-422">
+                                <rect key="frame" x="27" y="167" width="321" height="473"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <color key="separatorColor" white="1" alpha="0.50407130281690138" colorSpace="calibratedWhite"/>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <prototypes>
+                                    <tableViewCell opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="HighScoreCell" textLabel="7SJ-hV-N7l" detailTextLabel="qFb-rG-0s2" style="IBUITableViewCellStyleValue1" id="WBc-HU-flg">
+                                        <rect key="frame" x="0.0" y="28" width="321" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WBc-HU-flg" id="3Ce-J1-pgY">
+                                            <rect key="frame" x="0.0" y="0.0" width="321" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Mary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="7SJ-hV-N7l">
+                                                    <rect key="frame" x="15" y="13" width="41" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="FunctionPro-Book" family="Function Pro" pointSize="19"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="240 points" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="qFb-rG-0s2">
+                                                    <rect key="frame" x="219.5" y="13" width="86.5" height="19"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <fontDescription key="fontDescription" name="FunctionPro-Demi" family="Function Pro" pointSize="19"/>
+                                                    <color key="textColor" red="1" green="0.5568627451" blue="0.45098039220000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="OHy-ok-ZIW" id="sqw-aw-YD0"/>
+                                    <outlet property="delegate" destination="OHy-ok-ZIW" id="yxj-tV-dt0"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="vCx-lB-GfO" secondAttribute="trailing" constant="27" id="1i4-B7-vK3"/>
+                            <constraint firstItem="plS-RM-422" firstAttribute="leading" secondItem="yOj-m0-o1R" secondAttribute="leading" constant="27" id="3VM-1c-2nJ"/>
                             <constraint firstItem="5XI-Mw-kHC" firstAttribute="top" secondItem="c0P-dX-tIn" secondAttribute="bottom" constant="15" id="7X4-bJ-Uli"/>
                             <constraint firstItem="5XI-Mw-kHC" firstAttribute="leading" secondItem="yOj-m0-o1R" secondAttribute="leadingMargin" id="Hwn-Vj-amC"/>
+                            <constraint firstItem="bu2-AF-hy7" firstAttribute="top" secondItem="plS-RM-422" secondAttribute="bottom" constant="27" id="Sdm-8L-37j"/>
                             <constraint firstItem="vCx-lB-GfO" firstAttribute="centerY" secondItem="0fa-JA-6R5" secondAttribute="centerY" id="Up4-7w-MUy"/>
                             <constraint firstItem="0fa-JA-6R5" firstAttribute="leading" secondItem="yOj-m0-o1R" secondAttribute="leading" constant="27" id="c6t-P9-Z2Y"/>
+                            <constraint firstItem="plS-RM-422" firstAttribute="top" secondItem="vCx-lB-GfO" secondAttribute="bottom" constant="27" id="qms-eP-JqA"/>
+                            <constraint firstAttribute="trailing" secondItem="plS-RM-422" secondAttribute="trailing" constant="27" id="sEd-1x-c9n"/>
                             <constraint firstItem="0fa-JA-6R5" firstAttribute="top" secondItem="5XI-Mw-kHC" secondAttribute="bottom" constant="50" id="vpS-Ov-1lk"/>
                         </constraints>
                     </view>

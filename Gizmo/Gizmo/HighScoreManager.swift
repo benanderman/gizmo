@@ -42,21 +42,15 @@ struct HighScore {
 class HighScoreManager {
   static var localHighScores = [HighScore]()
   static var globalHighScores = [HighScore]()
+  static var name: String?
   
   static var userId: String {
     return UIDevice.current.identifierForVendor?.uuidString ?? "unknown"
   }
   
-  static func isScoreHigh(score: Int) -> Bool {
-    if localHighScores.count < maxLocalScores {
-      return true
-    }
-    return localHighScores.last!.score < score
-  }
-  
-  static func addHighScore(score: Int, name: String) {
+  static func addHighScore(score: Int) {
     let newHighScore = HighScore(userId: self.userId,
-                                 name: name,
+                                 name: self.name ?? "Mystery Person",
                                  score: score,
                                  timestamp: Int(Date().timeIntervalSince1970))
     
@@ -74,9 +68,7 @@ class HighScoreManager {
     }
     saveLocalHighScores()
     
-    if (insertIndex == 0) {
-      postGlobalHighScore(score: newHighScore, completion: {})
-    }
+    postGlobalHighScore(score: newHighScore, completion: {})
   }
   
   static func saveLocalHighScores() {
@@ -93,7 +85,7 @@ class HighScoreManager {
   }
   
   static func postGlobalHighScore(score: HighScore, completion: () -> Void) {
-    let url = URL(string: "http://gizmo-app-backend.herokuapp.com/scores/\(score.userId)")
+    let url = URL(string: "https://gizmo-app-backend.herokuapp.com/scores/\(score.userId)")
     let session = URLSession.shared
     let request = NSMutableURLRequest(url: url! as URL)
     request.httpMethod = "POST"
@@ -107,16 +99,38 @@ class HighScoreManager {
     request.addValue("application/json", forHTTPHeaderField: "Accept")
     
     let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
-        guard error == nil else {
-            return
-        }
+        guard error == nil else { return }
     })
 
     task.resume()
   }
   
-  static func fetchGlobalHighScores(completion: () -> Void) {
+  static func fetchGlobalHighScores(completion: @escaping ([HighScore]) -> Void) {
+    let url = URL(string: "https://gizmo-app-backend.herokuapp.com/scores")
+    let session = URLSession.shared
+    let request = NSMutableURLRequest(url: url! as URL)
+    request.httpMethod = "GET"
+    request.addValue("application/json", forHTTPHeaderField: "Accept")
+    request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     
+    let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
+        guard let data = data, error == nil else { return }
+
+        do {
+            if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [Any] {
+                var scores: [HighScore] = []
+                for raw in json {
+                    let rawScore = raw as! [String: Any]
+                    scores.append(HighScore(dictionary: rawScore))
+                }
+                completion(scores)
+            }
+        } catch let error {
+            print(error.localizedDescription)
+        }
+    })
+
+    task.resume()
   }
   
   // MARK: - Private

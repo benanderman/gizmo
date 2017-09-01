@@ -39,8 +39,8 @@ class GameViewController: UIViewController, EmojiAnimator {
   
   private var animationView = SKView()
   
-  private let confettiEmoji: [Character] = ["😃", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐨", "🐯", "🦁", "🐮", "🐷", "🐸", "🐔"]
-  private let sadEmoji: [Character] = ["😔", "😟", "😕", "🙁", "😧", "😢"]
+  private let confettiEmoji: [Character] = ["😃", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐨", "🐯", "🦁", "🐮", "🐷", "🐸", "🐔", "👌", "🎈", "🎉"]
+  private let sadEmoji: [Character] = ["😔", "😟", "😕", "🙁", "😧", "😢", "😓", "😩"]
   
   override func viewDidLoad() {
     super.viewDidLoad()
@@ -240,7 +240,8 @@ class GameViewController: UIViewController, EmojiAnimator {
       winLossLabel.text = "NOPE!!"
       description = "I'm \(nameAndTitle). Pls remember my name. :("
       
-      addSadEmoji(streak)
+      let numEmoji = streak == 0 ? 1 : streak
+      addSadEmoji(numEmoji)
       
       streak = 1
     }

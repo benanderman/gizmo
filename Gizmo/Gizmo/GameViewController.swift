@@ -151,6 +151,8 @@ class GameViewController: UIViewController, EmojiAnimator {
       alertController.addAction(cancelAction)
       
       self.present(alertController, animated: true, completion: nil)
+    } else {
+      self.performSegue(withIdentifier: "toScoreView", sender: self)
     }
   }
   

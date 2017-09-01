@@ -12,6 +12,7 @@ import SpriteKit
 class GameViewController: UIViewController, EmojiAnimator {
   @IBOutlet weak var timerLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
+  @IBOutlet weak var homeButton: UIButton!
   
   @IBOutlet var buttons: [UIButton]!
   
@@ -50,6 +51,7 @@ class GameViewController: UIViewController, EmojiAnimator {
     // Move the buttons and the tapView to the top.
     view.addSubview(buttonStackView)
     view.addSubview(tapView)
+    view.addSubview(homeButton)
     
     imageView.clipsToBounds = true
     imageView.layer.cornerRadius = imageView.frame.width / 2
@@ -152,6 +154,7 @@ class GameViewController: UIViewController, EmojiAnimator {
       
       self.present(alertController, animated: true, completion: nil)
     } else {
+      HighScoreManager.addHighScore(score: self.score)
       self.performSegue(withIdentifier: "toScoreView", sender: self)
     }
   }

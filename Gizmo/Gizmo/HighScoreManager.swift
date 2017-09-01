@@ -42,7 +42,14 @@ struct HighScore {
 class HighScoreManager {
   static var localHighScores = [HighScore]()
   static var globalHighScores = [HighScore]()
-  static var name: String?
+  static var name: String? {
+    set {
+      UserDefaults.standard.set(newValue, forKey: "name")
+    }
+    get {
+      return UserDefaults.standard.string(forKey: "name")
+    }
+  }
   
   static var userId: String {
     return UIDevice.current.identifierForVendor?.uuidString ?? "unknown"

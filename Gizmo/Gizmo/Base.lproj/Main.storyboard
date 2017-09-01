@@ -434,6 +434,7 @@
                     <connections>
                         <outlet property="buttonStackView" destination="eW3-V6-ehY" id="Bxs-JO-e8s"/>
                         <outlet property="descriptionLabel" destination="K5W-Z4-TZv" id="asc-8m-wOX"/>
+                        <outlet property="homeButton" destination="Chz-Um-JSi" id="ehg-Vj-D9V"/>
                         <outlet property="imageView" destination="eHp-58-JjQ" id="chz-uC-TJi"/>
                         <outlet property="labelStackView" destination="JLB-vQ-WsN" id="QB8-ac-loI"/>
                         <outlet property="scoreLabel" destination="iYx-9K-L3w" id="mv4-10-Lin"/>
@@ -599,7 +600,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Best Score: 400" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoC-Md-lQO">
-                                <rect key="frame" x="95" y="361" width="186" height="30"/>
+                                <rect key="frame" x="94.5" y="361" width="186" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bi4-x9-cPI"/>
                                 </constraints>
@@ -634,7 +635,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YU4-JS-PaE">
-                                <rect key="frame" x="111.5" y="201.5" width="153" height="35.5"/>
+                                <rect key="frame" x="111" y="201.5" width="153" height="35.5"/>
                                 <fontDescription key="fontDescription" name="FunctionPro-Medium" family="Function Pro" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>

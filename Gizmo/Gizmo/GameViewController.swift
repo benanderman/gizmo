@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import SpriteKit
 
-class GameViewController: UIViewController {
+class GameViewController: UIViewController, EmojiAnimator {
   @IBOutlet weak var timerLabel: UILabel!
   @IBOutlet weak var imageView: UIImageView!
   
@@ -32,12 +33,23 @@ class GameViewController: UIViewController {
   private var guessedRight = 0
   private var score = 0
   private var secondsLeft = 0
-  private var streak = 1
+  private var streak = 0
   
   private var timer = Timer()
   
+  private var animationView = SKView()
+  
+  private let confettiEmoji: [Character] = ["😃", "🐶", "🐱", "🐭", "🐹", "🐰", "🦊", "🐻", "🐼", "🐨", "🐯", "🦁", "🐮", "🐷", "🐸", "🐔"]
+  private let sadEmoji: [Character] = ["😔", "😟", "😕", "🙁", "😧", "😢"]
+  
   override func viewDidLoad() {
     super.viewDidLoad()
+    
+    animationView.allowsTransparency = true
+    view.addSubview(animationView)
+    // Move the buttons and the tapView to the top.
+    view.addSubview(buttonStackView)
+    view.addSubview(tapView)
     
     imageView.clipsToBounds = true
     imageView.layer.cornerRadius = imageView.frame.width / 2
@@ -88,6 +100,19 @@ class GameViewController: UIViewController {
     timer = Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true, block: { [weak self] (timer) in
       self?.updateTimer()
     })
+    
+    if animationView.scene == nil {
+      let scene = makeScene()
+      animationView.frame.size = scene.size
+      animationView.presentScene(scene)
+    }
+  }
+  
+  override func viewDidLayoutSubviews() {
+    super.viewDidLayoutSubviews()
+    
+    animationView.center.x = view.bounds.midX
+    animationView.center.y = view.bounds.midY
   }
   
   func updateTimer() {
@@ -183,13 +208,19 @@ class GameViewController: UIViewController {
       winLossLabel.text = "YES FRIEND!"
       description = "I'm \(nameAndTitle). You are great."
       guessedRight += 1
-      score += 10 * streak
       streak += 1
+      score += 10 * streak
       scoreLabel.text = "\(score)"
+      
+      addClapEmoji()
+      addConfettiEmoji(streak)
     }
     else {
       winLossLabel.text = "NOPE!!"
       description = "I'm \(nameAndTitle). Pls remember my name. :("
+      
+      addSadEmoji(streak)
+      
       streak = 1
     }
     
@@ -229,6 +260,92 @@ class GameViewController: UIViewController {
       vc.score = score
       vc.guessed = guessed
       vc.guessedRight = guessedRight
+    }
+  }
+  
+  private func addClapEmoji() {
+    let emoji = addEmoji("👏", to: animationView.scene!)
+    emoji.position.y -= 90
+    
+    let scaleUpAction = SKAction.scale(to: 1.5, duration: 0.3)
+    let scaleDownAction = SKAction.scale(to: 1, duration: 0.3)
+    
+    let removeNodeAction = SKAction.removeFromParent()
+    
+    let scaleActionSequence = SKAction.sequence([scaleUpAction, scaleDownAction, scaleUpAction, scaleDownAction, removeNodeAction])
+    
+    emoji.run(scaleActionSequence)
+  }
+  
+  private func addConfettiEmoji(_ numberOfEmoji: Int) {
+    guard let scene = animationView.scene else {
+      return
+    }
+    
+    let idx = Int(arc4random_uniform(UInt32(confettiEmoji.count)))
+    let char = confettiEmoji[idx]
+    
+    var duration = 0.1
+    for lcv in 1...numberOfEmoji {
+      let emoji = addEmoji(char, to: scene)
+      
+      let targetX = CGFloat(arc4random_uniform(UInt32(scene.frame.width)))
+      let targetY = scene.frame.height
+      
+      let targetPoint = CGPoint(x: targetX, y: targetY)
+      let moveAction = SKAction.move(to: targetPoint, duration: 1)
+      moveAction.timingMode = .easeOut
+      
+      let offset = Double(lcv - 1)
+      let waitAction  = SKAction.wait(forDuration:duration * offset)
+      duration -= 0.01
+      duration = max(duration, 0)
+      
+      let fadeAction = SKAction.fadeOut(withDuration: 1)
+      
+      let groupAction = SKAction.group([moveAction, fadeAction])
+      
+      let removeNodeAction = SKAction.removeFromParent()
+      
+      let actionSequence = SKAction.sequence([waitAction, groupAction, removeNodeAction]);
+      
+      emoji.run(actionSequence)
+    }
+  }
+  
+  private func addSadEmoji(_ numberOfEmoji: Int) {
+    guard let scene = animationView.scene else {
+      return
+    }
+    
+    let idx = Int(arc4random_uniform(UInt32(sadEmoji.count)))
+    let char = sadEmoji[idx]
+    
+    var duration = 0.1
+    for lcv in 1...numberOfEmoji {
+      let emoji = addEmoji(char, to: animationView.scene!)
+      
+      let targetX = numberOfEmoji == 1 ? emoji.position.x : CGFloat(arc4random_uniform(UInt32(scene.frame.width)))
+      let targetY: CGFloat = 0
+      
+      let targetPoint = CGPoint(x: targetX, y: targetY)
+      let moveAction = SKAction.move(to: targetPoint, duration: 1)
+      moveAction.timingMode = .easeOut
+      
+      let offset = Double(lcv - 1)
+      let waitAction  = SKAction.wait(forDuration:duration * offset)
+      duration -= 0.01
+      duration = max(duration, 0)
+      
+      let fadeAction = SKAction.fadeOut(withDuration: 1)
+      
+      let groupAction = SKAction.group([moveAction, fadeAction])
+      
+      let removeNodeAction = SKAction.removeFromParent()
+      
+      let actionSequence = SKAction.sequence([waitAction, groupAction, removeNodeAction]);
+      
+      emoji.run(actionSequence)
     }
   }
 }

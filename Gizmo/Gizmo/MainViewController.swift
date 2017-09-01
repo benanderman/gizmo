@@ -65,13 +65,6 @@ class MainViewController: UIViewController {
       translateY.duration = slowDuration
       translateY.fillMode = kCAFillModeBackwards
       translateY.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
-      
-      let translateX = CABasicAnimation(keyPath: "transform.translation.x")
-      translateX.fromValue = self.view.frame.size.width - self.startButton.frame.minX
-      translateX.toValue = 0.0
-      translateX.duration = duration
-      translateX.fillMode = kCAFillModeBackwards
-      translateX.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseOut)
     
       var beginTime = CACurrentMediaTime()
       for view in logoViews {
@@ -88,10 +81,8 @@ class MainViewController: UIViewController {
       
       for view in buttons {
         fade.beginTime = beginTime
-        translateX.beginTime = beginTime
         if let layer = view?.layer {
           layer.add(fade, forKey: "fade")
-          layer.add(translateX, forKey: "translateX")
           beginTime += 0.8 * duration
         }
       }

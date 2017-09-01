@@ -18,7 +18,7 @@ class HighScoresViewController: UIViewController {
   var mode: HighScoreMode = .Local
   
   override func viewWillAppear(_ animated: Bool) {
-    HighScoreManager.fetchGlobalHighScores {
+    HighScoreManager.fetchGlobalHighScores {_ in 
       
     }
   }

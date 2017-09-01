@@ -221,7 +221,7 @@ class GameViewController: UIViewController, EmojiAnimator {
       return
     }
     
-    let nameAndTitle = "\(employee.firstName), \(employee.title)"
+    let nameAndTitle = "\(employee.firstName) \(employee.lastName), \(employee.title)"
     let description: String
     
     guessed += 1

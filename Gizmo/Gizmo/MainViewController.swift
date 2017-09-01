@@ -26,6 +26,8 @@ class MainViewController: UIViewController {
     
     startButton.layer.cornerRadius = 3.0
     
+    settingsButton.isEnabled = false
+    
     // Do any additional setup after loading the view.
     Employee.loadFromWeb { [weak self] (employees: [Employee]?) in
       guard let strongSelf = self else {
@@ -33,6 +35,10 @@ class MainViewController: UIViewController {
       }
       
       strongSelf.employees = employees
+      
+      DispatchQueue.main.async {
+        strongSelf.settingsButton.isEnabled = true
+      }
     }
   }
   
@@ -87,10 +93,7 @@ class MainViewController: UIViewController {
         }
       }
     }
-    
   }
-  
-  
   
   // MARK: - Navigation
   
@@ -121,6 +124,10 @@ class MainViewController: UIViewController {
       }
       
       let vc = segue.destination as! GameViewController
+      vc.employees = employees
+    }
+    else if segue.destination is EmployeeDirectoryViewController {
+      let vc = segue.destination as! EmployeeDirectoryViewController
       vc.employees = employees
     }
   }

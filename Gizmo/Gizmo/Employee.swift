@@ -17,6 +17,14 @@ class Employee {
   let url: URL
   var 🖼: UIImage?
   
+  var fullName: String {
+    return "\(firstName) \(lastName)"
+  }
+  
+  var alphabeticalName: String {
+    return "\(lastName), \(firstName)"
+  }
+  
   init(firstName: String, lastName: String, department: String, title: String, url: URL) {
     self.firstName = firstName
     self.lastName = lastName
@@ -47,6 +55,9 @@ class Employee {
             // Finally convert that Data into an image and do what you wish with it.
             strongSelf.🖼 = UIImage(data: imageData)
             // Do something with your image.
+            DispatchQueue.main.async {
+              NotificationCenter.default.post(name: .EmployeeImageDownloaded, object: self)
+            }
           }
           else {
             print("Couldn't get image: Image is nil")
@@ -91,4 +102,10 @@ private func loadEmployees() -> [Employee]? {
   }
   
   return 👥
+}
+
+extension Notification.Name {
+  
+  static let EmployeeImageDownloaded = Notification.Name("EmployeeImageDownloaded")
+  
 }

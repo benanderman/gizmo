@@ -13,6 +13,7 @@
 		8BB691931F58654B00D9EBE5 /* AnimatingSpringLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB691921F58654B00D9EBE5 /* AnimatingSpringLogoView.swift */; };
 		8BB691961F58772C00D9EBE5 /* FunctionPro-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BB691951F58772C00D9EBE5 /* FunctionPro-Medium.otf */; };
 		8BB691981F58775100D9EBE5 /* FunctionPro-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 8BB691971F58775100D9EBE5 /* FunctionPro-Bold.otf */; };
+		8BD6D4491F59EEC200B0E195 /* EmployeeDirectoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BD6D4481F59EEC200B0E195 /* EmployeeDirectoryViewController.swift */; };
 		8BE0C8A81F585BF1000CA177 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0C8A71F585BF1000CA177 /* AppDelegate.swift */; };
 		8BE0C8AF1F585BF1000CA177 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8BE0C8AD1F585BF1000CA177 /* Main.storyboard */; };
 		8BE0C8B11F585BF1000CA177 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8BE0C8B01F585BF1000CA177 /* Assets.xcassets */; };
@@ -33,6 +34,7 @@
 		8BB691921F58654B00D9EBE5 /* AnimatingSpringLogoView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AnimatingSpringLogoView.swift; sourceTree = "<group>"; };
 		8BB691951F58772C00D9EBE5 /* FunctionPro-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Medium.otf"; sourceTree = "<group>"; };
 		8BB691971F58775100D9EBE5 /* FunctionPro-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Bold.otf"; sourceTree = "<group>"; };
+		8BD6D4481F59EEC200B0E195 /* EmployeeDirectoryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeDirectoryViewController.swift; sourceTree = "<group>"; };
 		8BE0C8A41F585BF1000CA177 /* Gizmo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gizmo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BE0C8A71F585BF1000CA177 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8BE0C8AE1F585BF1000CA177 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -95,6 +97,7 @@
 				8BE0C8B01F585BF1000CA177 /* Assets.xcassets */,
 				D28DAAF01F58827400FD25B6 /* EmojiAnimator.swift */,
 				8BB691901F5863B900D9EBE5 /* Employee.swift */,
+				8BD6D4481F59EEC200B0E195 /* EmployeeDirectoryViewController.swift */,
 				8BE0C8BD1F58602B000CA177 /* GameViewController.swift */,
 				D228583A1F59C9B900BD5D88 /* HighScoreManager.swift */,
 				D228583C1F59E41600BD5D88 /* HighScoresViewController.swift */,
@@ -187,6 +190,7 @@
 			files = (
 				8BE0C8A81F585BF1000CA177 /* AppDelegate.swift in Sources */,
 				8BB691931F58654B00D9EBE5 /* AnimatingSpringLogoView.swift in Sources */,
+				8BD6D4491F59EEC200B0E195 /* EmployeeDirectoryViewController.swift in Sources */,
 				D28DAAF11F58827400FD25B6 /* EmojiAnimator.swift in Sources */,
 				8BE0C8BE1F58602B000CA177 /* GameViewController.swift in Sources */,
 				8BE0C8BC1F585C42000CA177 /* MainViewController.swift in Sources */,

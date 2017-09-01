@@ -114,20 +114,22 @@ class HighScoreManager {
     request.addValue("application/json", forHTTPHeaderField: "Content-Type")
     
     let task = session.dataTask(with: request as URLRequest, completionHandler: { data, response, error in
-        guard let data = data, error == nil else { return }
+      guard let data = data, error == nil else { return }
 
-        do {
-            if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [Any] {
-                var scores: [HighScore] = []
-                for raw in json {
-                    let rawScore = raw as! [String: Any]
-                    scores.append(HighScore(dictionary: rawScore))
-                }
-                completion(scores)
-            }
-        } catch let error {
-            print(error.localizedDescription)
+      do {
+        if let json = try JSONSerialization.jsonObject(with: data, options: .allowFragments) as? [Any] {
+          var scores: [HighScore] = []
+          for raw in json {
+            let rawScore = raw as! [String: Any]
+            scores.append(HighScore(dictionary: rawScore))
+          }
+          
+          globalHighScores = scores
+          completion(scores)
         }
+      } catch let error {
+        print(error.localizedDescription)
+      }
     })
 
     task.resume()

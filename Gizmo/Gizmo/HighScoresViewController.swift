@@ -14,12 +14,23 @@ enum HighScoreMode {
 }
 
 class HighScoresViewController: UIViewController {
+  @IBOutlet var segmentedControl: UISegmentedControl!
+  @IBOutlet var tableView: UITableView!
   
   var mode: HighScoreMode = .Local
   
+  @IBAction func updateMode(sender: Any) {
+    mode = self.segmentedControl.selectedSegmentIndex == 0 ? .Global : .Local
+    tableView.reloadData()
+  }
+  
   override func viewWillAppear(_ animated: Bool) {
-    HighScoreManager.fetchGlobalHighScores {_ in 
-      
+    HighScoreManager.fetchGlobalHighScores { [weak self] _ in
+      if self?.mode == .Global {
+        DispatchQueue.main.sync {
+          self?.tableView.reloadData()
+        }
+      }
     }
   }
 
@@ -78,8 +89,13 @@ extension HighScoresViewController: UITableViewDataSource {
       let dateFormatter = DateFormatter()
       dateFormatter.locale = Locale(identifier: "en_US")
       dateFormatter.setLocalizedDateFormatFromTemplate("MMM dd h:mm a")
+      cell.textLabel?.font = UIFont(name: "FunctionPro-Book", size: 19.0)
       cell.textLabel?.text = dateFormatter.string(from: date)
     } else {
+      cell.textLabel?.font = UIFont(name: "FunctionPro-Book", size: 19.0)
+      if highScore.userId == HighScoreManager.userId {
+        cell.textLabel?.font = UIFont(name: "FunctionPro-Demi", size: 19.0)
+      }
       cell.textLabel?.text = highScore.name
     }
     

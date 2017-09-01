@@ -20,6 +20,7 @@
 		8BE0C8BC1F585C42000CA177 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0C8BB1F585C42000CA177 /* MainViewController.swift */; };
 		8BE0C8BE1F58602B000CA177 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0C8BD1F58602B000CA177 /* GameViewController.swift */; };
 		8BE0C8C01F5860A3000CA177 /* ScoreViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BE0C8BF1F5860A3000CA177 /* ScoreViewController.swift */; };
+		D228583B1F59C9B900BD5D88 /* HighScoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D228583A1F59C9B900BD5D88 /* HighScoreManager.swift */; };
 		D28DAAF11F58827400FD25B6 /* EmojiAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = D28DAAF01F58827400FD25B6 /* EmojiAnimator.swift */; };
 		D28DAAF31F58C81F00FD25B6 /* FunctionPro-Book.otf in Resources */ = {isa = PBXBuildFile; fileRef = D28DAAF21F58C81F00FD25B6 /* FunctionPro-Book.otf */; };
 /* End PBXBuildFile section */
@@ -40,6 +41,7 @@
 		8BE0C8BB1F585C42000CA177 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		8BE0C8BD1F58602B000CA177 /* GameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		8BE0C8BF1F5860A3000CA177 /* ScoreViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScoreViewController.swift; sourceTree = "<group>"; };
+		D228583A1F59C9B900BD5D88 /* HighScoreManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreManager.swift; sourceTree = "<group>"; };
 		D28DAAF01F58827400FD25B6 /* EmojiAnimator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmojiAnimator.swift; sourceTree = "<group>"; };
 		D28DAAF21F58C81F00FD25B6 /* FunctionPro-Book.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "FunctionPro-Book.otf"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -92,6 +94,7 @@
 				D28DAAF01F58827400FD25B6 /* EmojiAnimator.swift */,
 				8BB691901F5863B900D9EBE5 /* Employee.swift */,
 				8BE0C8BD1F58602B000CA177 /* GameViewController.swift */,
+				D228583A1F59C9B900BD5D88 /* HighScoreManager.swift */,
 				8BE0C8B51F585BF1000CA177 /* Info.plist */,
 				8BE0C8B21F585BF1000CA177 /* LaunchScreen.storyboard */,
 				8BE0C8AD1F585BF1000CA177 /* Main.storyboard */,
@@ -184,6 +187,7 @@
 				D28DAAF11F58827400FD25B6 /* EmojiAnimator.swift in Sources */,
 				8BE0C8BE1F58602B000CA177 /* GameViewController.swift in Sources */,
 				8BE0C8BC1F585C42000CA177 /* MainViewController.swift in Sources */,
+				D228583B1F59C9B900BD5D88 /* HighScoreManager.swift in Sources */,
 				8BB691911F5863B900D9EBE5 /* Employee.swift in Sources */,
 				8BE0C8C01F5860A3000CA177 /* ScoreViewController.swift in Sources */,
 				8B70570F1F5888A7000449FA /* Shuffle.swift in Sources */,

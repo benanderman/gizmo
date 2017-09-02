@@ -131,6 +131,7 @@ class GameViewController: UIViewController, EmojiAnimator {
   
   func timeRanOut() {
     timer.invalidate()
+    streak = 0
     if HighScoreManager.name == nil {
       let alertController = UIAlertController(title: "High score!", message: nil, preferredStyle: .alert)
       

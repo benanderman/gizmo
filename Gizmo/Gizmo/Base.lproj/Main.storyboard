@@ -57,7 +57,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="55" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="EwZ-R3-XwG">
-                                <rect key="frame" x="22" y="112" width="331" height="555"/>
+                                <rect key="frame" x="22" y="127" width="331" height="540"/>
                                 <color key="backgroundColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -69,16 +69,16 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="CyJ-UF-8vN">
-                                                    <rect key="frame" x="15" y="10" width="33.5" height="20.5"/>
+                                                    <rect key="frame" x="15" y="13" width="26.5" height="17"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <fontDescription key="fontDescription" name="FunctionPro-Book" family="Function Pro" pointSize="17"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Subtitle" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="hmo-tm-aiT">
-                                                    <rect key="frame" x="15" y="30.5" width="44" height="14.5"/>
+                                                    <rect key="frame" x="15" y="30" width="34" height="12"/>
                                                     <autoresizingMask key="autoresizingMask"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <fontDescription key="fontDescription" name="FunctionPro-Book" family="Function Pro" pointSize="12"/>
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -93,7 +93,7 @@
                                 </connections>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9L-oV-LED">
-                                <rect key="frame" x="16" y="20" width="30" height="30"/>
+                                <rect key="frame" x="16" y="35" width="30" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="I2n-Ha-Q61"/>
                                     <constraint firstAttribute="width" constant="30" id="JYA-2C-xdE"/>
@@ -104,7 +104,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Directory" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2JC-Dd-eXK">
-                                <rect key="frame" x="22" y="70" width="96.5" height="22"/>
+                                <rect key="frame" x="22" y="85" width="96.5" height="22"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="22" id="vGW-6c-6zX"/>
                                 </constraints>
@@ -116,12 +116,12 @@
                         <color key="backgroundColor" red="0.0" green="0.42352941179999998" blue="0.84313725490000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="EwZ-R3-XwG" firstAttribute="top" secondItem="2JC-Dd-eXK" secondAttribute="bottom" constant="20" id="25j-GG-oiA"/>
+                            <constraint firstItem="U9L-oV-LED" firstAttribute="top" secondItem="6sQ-yF-kcI" secondAttribute="bottom" constant="15" id="2Ow-Uv-pAR"/>
                             <constraint firstItem="2JC-Dd-eXK" firstAttribute="leading" secondItem="sRg-NO-3JK" secondAttribute="leading" constant="22" id="9ns-gW-GxQ"/>
                             <constraint firstItem="EwZ-R3-XwG" firstAttribute="leading" secondItem="sRg-NO-3JK" secondAttribute="leading" constant="22" id="Ecj-Yh-DrY"/>
                             <constraint firstItem="2JC-Dd-eXK" firstAttribute="top" secondItem="U9L-oV-LED" secondAttribute="bottom" constant="20" id="a64-Nc-hXI"/>
                             <constraint firstAttribute="trailing" secondItem="EwZ-R3-XwG" secondAttribute="trailing" constant="22" id="fT1-I4-uOM"/>
                             <constraint firstItem="F71-73-BYt" firstAttribute="top" secondItem="EwZ-R3-XwG" secondAttribute="bottom" id="lar-uJ-giR"/>
-                            <constraint firstItem="U9L-oV-LED" firstAttribute="top" secondItem="sRg-NO-3JK" secondAttribute="topMargin" constant="20" id="rgV-Eu-5fo"/>
                             <constraint firstItem="U9L-oV-LED" firstAttribute="leading" secondItem="sRg-NO-3JK" secondAttribute="leadingMargin" id="wvC-Ta-zxD"/>
                         </constraints>
                     </view>
@@ -600,7 +600,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Best Score: 400" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eoC-Md-lQO">
-                                <rect key="frame" x="94.5" y="361" width="186" height="30"/>
+                                <rect key="frame" x="95" y="361" width="186" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="bi4-x9-cPI"/>
                                 </constraints>
@@ -635,7 +635,7 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Your Score" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YU4-JS-PaE">
-                                <rect key="frame" x="111" y="201.5" width="153" height="35.5"/>
+                                <rect key="frame" x="111.5" y="201.5" width="153" height="35.5"/>
                                 <fontDescription key="fontDescription" name="FunctionPro-Medium" family="Function Pro" pointSize="35"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>

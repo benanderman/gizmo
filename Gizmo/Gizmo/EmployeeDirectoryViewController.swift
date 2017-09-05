@@ -93,7 +93,12 @@ extension EmployeeDirectoryViewController: UITableViewDataSource {
       return cell;
     }
     
-    cell.imageView?.image = employee.🖼 == nil ? #imageLiteral(resourceName: "cat") : employee.🖼
+    if let imageView = cell.imageView {
+      imageView.clipsToBounds = true
+      imageView.layer.cornerRadius = cell.frame.height / 2
+      imageView.image = employee.🖼 ?? #imageLiteral(resourceName: "cat")
+    }
+    
     cell.textLabel?.text = "\(employee.alphabeticalName)"
     cell.detailTextLabel?.text = "\(employee.title)"
     

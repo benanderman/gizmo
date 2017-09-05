@@ -223,8 +223,6 @@ class GameViewController: UIViewController, EmojiAnimator {
       return
     }
     
-    showButtons(false)
-    
     guard let employee = currentEmployee else {
       return
     }
@@ -233,6 +231,7 @@ class GameViewController: UIViewController, EmojiAnimator {
     let description: String
     
     guessed += 1
+    var delay = 0
     if button.titleLabel?.text == employee.firstName {
       winLossLabel.text = "Yes!"
       description = "I'm \(nameAndTitle). You are great."
@@ -252,7 +251,10 @@ class GameViewController: UIViewController, EmojiAnimator {
       addSadEmoji(numEmoji)
       
       streak = 0
+      delay = 1
     }
+    
+    showButtons(false, delay: TimeInterval(delay))
     
     guard let range = description.range(of: nameAndTitle) else {
       return
@@ -266,10 +268,12 @@ class GameViewController: UIViewController, EmojiAnimator {
     descriptionLabel.attributedText = mutableDescription
   }
   
-  func showButtons(_ visible: Bool) {
+  func showButtons(_ visible: Bool, delay: TimeInterval = 0) {
     buttonStackView.isHidden = !visible
     labelStackView.isHidden = visible
-    tapView.isHidden = visible
+    DispatchQueue.main.asyncAfter(deadline: .now() + delay) { [weak self] in
+      self?.tapView.isHidden = visible
+    }
   }
   
   func screenTapped() {

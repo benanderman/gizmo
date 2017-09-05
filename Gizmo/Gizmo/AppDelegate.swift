@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import HockeySDK
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDelegate {
@@ -16,6 +17,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
     // Override point for customization after application launch.
+    BITHockeyManager.shared().configure(withIdentifier: "620e21d7ae77464fbb47e96d76a7cd12")
+    BITHockeyManager.shared().start()
+    BITHockeyManager.shared().authenticator.authenticateInstallation()
+    
     HighScoreManager.loadLocalHighScores()
 
     return true

@@ -1,0 +1,6 @@
+framework module Pods_Gizmo {
+  umbrella header "Pods-Gizmo-umbrella.h"
+
+  export *
+  module * { export * }
+}
